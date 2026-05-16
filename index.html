@@ -1,10 +1,197 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <title>daydreamplace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min-code0202 | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h2>hi</h2>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Go to top">
+            <span class="brand-mark">M</span>
+            <span>Min-code0202</span>
+        </a>
+        <nav class="site-nav" aria-label="Portfolio navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero-section">
+            <div class="hero-copy">
+                <p class="eyebrow">Backend Developer Portfolio</p>
+                <h1>문제를 구조화하고, 오래 유지되는 서비스를 만드는 개발자</h1>
+                <p class="hero-description">
+                    Spring 기반 백엔드와 데이터 흐름을 중심으로 서비스를 설계하고 구현합니다.
+                    이 페이지는 프로젝트 경험, 기술 스택, 문제 해결 과정을 정리하기 위한 포트폴리오입니다.
+                </p>
+                <div class="hero-actions" aria-label="Primary links">
+                    <a class="primary-link" href="#projects">프로젝트 보기</a>
+                    <a class="secondary-link" href="https://github.com/Min-code0202" target="_blank"
+                        rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+
+            <aside class="profile-panel" aria-label="Profile summary">
+                <div class="profile-visual">
+                    <span>MIN</span>
+                </div>
+                <dl class="profile-meta">
+                    <div>
+                        <dt>Name</dt>
+                        <dd>Min-code0202</dd>
+                    </div>
+                    <div>
+                        <dt>Focus</dt>
+                        <dd>Backend, API, Database</dd>
+                    </div>
+                    <div>
+                        <dt>Stack</dt>
+                        <dd>Java, Spring, MySQL</dd>
+                    </div>
+                </dl>
+            </aside>
+        </section>
+
+        <div class="page-grid">
+            <aside class="section-index" aria-label="Section index">
+                <span>Portfolio</span>
+                <a href="#about">01 About</a>
+                <a href="#skills">02 Skills</a>
+                <a href="#projects">03 Projects</a>
+                <a href="#growth">04 Growth</a>
+            </aside>
+
+            <div class="content-flow">
+                <section id="about" class="content-section">
+                    <div class="section-heading">
+                        <span>01</span>
+                        <h2>About Me</h2>
+                    </div>
+                    <p class="lead-text">
+                        기능을 먼저 만들기보다 요구사항을 분해하고, 데이터와 책임의 경계를 정리한 뒤 구현하는
+                        개발자가 되고자 합니다. 아직 채워 넣을 개인 소개 문장은 프로젝트 경험에 맞춰 다듬으면 됩니다.
+                    </p>
+                    <div class="note-list">
+                        <article>
+                            <h3>관심 영역</h3>
+                            <p>REST API 설계, 인증/인가, 관계형 데이터 모델링, 배포 자동화</p>
+                        </article>
+                        <article>
+                            <h3>일하는 방식</h3>
+                            <p>문제를 작게 나누고, 재현 가능한 기준으로 원인을 확인하며, 변경 영향을 기록합니다.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="skills" class="content-section">
+                    <div class="section-heading">
+                        <span>02</span>
+                        <h2>Skills</h2>
+                    </div>
+                    <div class="skill-board">
+                        <div class="skill-row">
+                            <strong>Language</strong>
+                            <span>Java, JavaScript, SQL</span>
+                        </div>
+                        <div class="skill-row">
+                            <strong>Backend</strong>
+                            <span>Spring Boot, Spring Security, JPA, MyBatis</span>
+                        </div>
+                        <div class="skill-row">
+                            <strong>Database</strong>
+                            <span>MySQL, MariaDB, Redis</span>
+                        </div>
+                        <div class="skill-row">
+                            <strong>Infra</strong>
+                            <span>Git, GitHub Actions, Docker, AWS</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="content-section">
+                    <div class="section-heading">
+                        <span>03</span>
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="project-list">
+                        <article class="project-item">
+                            <div class="project-shot">
+                                <span>PROJECT 01</span>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-period">2026.00 - 2026.00</p>
+                                <h3>프로젝트 이름</h3>
+                                <p>
+                                    프로젝트의 목표, 맡은 역할, 구현한 핵심 기능을 작성하는 영역입니다.
+                                    smj1513 페이지처럼 문제, 해결, 결과 순서로 정리하면 좋습니다.
+                                </p>
+                                <ul class="project-tags">
+                                    <li>Spring Boot</li>
+                                    <li>MySQL</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-item">
+                            <div class="project-shot project-shot-alt">
+                                <span>PROJECT 02</span>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-period">2025.00 - 2025.00</p>
+                                <h3>프로젝트 이름</h3>
+                                <p>
+                                    협업 과정, 기술 선택 이유, 성능 개선이나 트러블슈팅 내용을 추가할 수 있습니다.
+                                    실제 이미지가 생기면 왼쪽 영역을 스크린샷으로 교체하면 됩니다.
+                                </p>
+                                <ul class="project-tags">
+                                    <li>Java</li>
+                                    <li>JPA</li>
+                                    <li>AWS</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="growth" class="content-section">
+                    <div class="section-heading">
+                        <span>04</span>
+                        <h2>Growth</h2>
+                    </div>
+                    <div class="timeline">
+                        <article>
+                            <span>Now</span>
+                            <p>프로젝트 경험을 기준으로 포트폴리오 문장을 구체화하는 단계</p>
+                        </article>
+                        <article>
+                            <span>Next</span>
+                            <p>각 프로젝트의 성과 지표, 문제 해결 과정, 링크를 추가할 예정</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="contact" class="contact-section">
+                    <div>
+                        <h2>Contact</h2>
+                        <p>포트폴리오에 표시할 이메일과 링크를 여기에 연결하면 됩니다.</p>
+                    </div>
+                    <a href="mailto:example@example.com">example@example.com</a>
+                </section>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
