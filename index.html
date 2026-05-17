@@ -198,36 +198,175 @@
                 <h2>Projects</h2>
             </div>
             <article class="project-card">
-                <div class="project-header">
-                    <div>
-                        <h3>DADAP</h3>
-                        <p>SSAFY 공통 프로젝트 우수상(2등) 수상 프로젝트</p>
+                <div class="project-readme">
+                    <div class="project-readme-head">
+                        <div>
+                            <h3>DADAP</h3>
+                            <p>Whisper 및 GPT 기반 AI 면접 분석 · 피드백 서비스</p>
+                        </div>
+                        <div class="project-badges">
+                            <span>FE 3 / BE 3</span>
+                            <span>Backend Developer</span>
+                            <span>2026.01.06 - 2026.02.13</span>
+                        </div>
                     </div>
-                    <span>2026.02</span>
-                </div>
-                <div class="project-body">
-                    <div class="project-visual">
-                        <span>Project 01</span>
+
+                    <div class="project-readme-hero">
+                        <div class="project-readme-copy">
+                            <h4>프로젝트 소개</h4>
+                            <p>
+                                DADAP은 CS 면접과 포트폴리오 면접을 반복 연습하고, 답변 분석 결과와 피드백, 꼬리질문으로 다시 복기할 수 있도록 만든 AI 면접 분석 플랫폼입니다.
+                            </p>
+                            <div class="project-info-table">
+                                <div><strong>역할</strong><span>Backend Developer, AI 분석 요청 처리 및 성능 검증</span></div>
+                                <div><strong>인원</strong><span>프론트엔드 3명 / 백엔드 3명</span></div>
+                                <div><strong>기간</strong><span>2026.01.06 - 2026.02.13</span></div>
+                                <div><strong>수상</strong><span>SSAFY 특화 프로젝트 우수상(2등)</span></div>
+                            </div>
+                        </div>
+                        <div class="project-readme-visual">
+                            <img src="assets/images/DADAP/wireframe.png" alt="DADAP 와이어프레임">
+                        </div>
                     </div>
-                    <div class="project-detail">
-                        <dl>
+
+                    <section class="project-readme-section">
+                        <h4>기술 스택</h4>
+                        <div class="stack-groups">
                             <div>
-                                <dt>성과</dt>
-                                <dd>SSAFY 공통 프로젝트 우수상(2등)</dd>
+                                <strong>Backend</strong>
+                                <span>Java 21, Spring Boot 3.5.9, Spring Security 3.5.9, Spring Data JPA 3.5.9, JJWT 0.12.5, Spring Retry, SpringDoc OpenAPI 2.7.0, AWS SDK S3 2.25.66</span>
                             </div>
                             <div>
-                                <dt>역할</dt>
-                                <dd>프로젝트 상세 자료 기준으로 추가 예정</dd>
+                                <strong>AI Server</strong>
+                                <span>FastAPI 0.128.0</span>
                             </div>
                             <div>
-                                <dt>기술</dt>
-                                <dd>상세 기술 스택 추가 예정</dd>
+                                <strong>Frontend</strong>
+                                <span>React 19.2.0, Vite 7.2.4, TypeScript 5.9.3, Tailwind CSS 4.1.18, Axios 1.13.3</span>
                             </div>
-                        </dl>
-                        <p>
-                            프로젝트 목표, 담당 기능, 데이터 흐름, 장애/예외 처리, 개선 과정을 상세 프로젝트 카드 형식으로 확장할 예정입니다.
+                            <div>
+                                <strong>Infra / Test</strong>
+                                <span>Docker, AWS, k6</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>핵심 기능</h4>
+                        <ul class="project-bullet-list">
+                            <li>AI 면접 질문 생성</li>
+                            <li>음성 기반 답변 분석 및 피드백 제공</li>
+                            <li>포트폴리오 기반 맞춤 질문 및 꼬리질문 생성</li>
+                            <li>CS 개념 학습과 면접 복기 흐름 연결</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>주요 화면</h4>
+                        <div class="readme-gallery">
+                            <figure class="readme-shot">
+                                <img src="assets/images/DADAP/portfolio-upload.gif" alt="DADAP 포트폴리오 업로드 화면">
+                                <figcaption><strong>포트폴리오 업로드</strong><span>면접에 활용할 문서를 업로드하는 시작 화면</span></figcaption>
+                            </figure>
+                            <figure class="readme-shot">
+                                <img src="assets/images/DADAP/p2p.gif" alt="DADAP 실시간 면접 진행 화면">
+                                <figcaption><strong>실시간 면접</strong><span>AI 면접관과 실전 면접 흐름을 진행하는 화면</span></figcaption>
+                            </figure>
+                            <figure class="readme-shot">
+                                <img src="assets/images/DADAP/ARCHIVE.gif" alt="DADAP 학습 아카이브 화면">
+                                <figcaption><strong>학습 아카이브</strong><span>주제별 질문 카드를 탐색하는 학습 화면</span></figcaption>
+                            </figure>
+                            <figure class="readme-shot">
+                                <img src="assets/images/DADAP/mypage.gif" alt="DADAP 마이페이지 화면">
+                                <figcaption><strong>마이페이지</strong><span>면접 기록과 저장한 문제를 복기하는 사용자 활동 화면</span></figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>핵심 문제 해결</h4>
+                        <p class="project-problem-intro">
+                            이 프로젝트의 핵심은 AI 분석 기능 자체보다, 장시간 외부 AI 요청이 포함된 처리를 어떻게 서버 구조 안에서 안정적으로 다룰 것인가였습니다.
                         </p>
-                    </div>
+                        <div class="readme-story">
+                            <div class="story-block">
+                                <h5>문제</h5>
+                                <ul class="project-bullet-list">
+                                    <li>AI 요청을 동기 방식으로 처리하면서 응답 지연이 발생했습니다.</li>
+                                    <li>외부 AI API 응답을 기다리는 동안 서버 스레드가 장시간 점유되었습니다.</li>
+                                    <li>요청이 늘어날수록 다음 요청들이 대기열에 쌓이며 처리량이 급감했습니다.</li>
+                                </ul>
+                            </div>
+                            <div class="story-block">
+                                <h5>해결</h5>
+                                <ul class="project-bullet-list">
+                                    <li>AI 요청 처리 흐름을 비동기 구조로 전환</li>
+                                    <li>상태 엔티티를 <code>QUEUED / RUNNING / DONE / FAILED</code> 로 설계</li>
+                                    <li>즉시 <code>202 Accepted</code> 반환 후 백그라운드 작업으로 분리</li>
+                                    <li>외부 AI 호출 실패에 대비한 재시도 및 상태 추적 구조 보완</li>
+                                    <li>k6 기반 부하 테스트로 동기/비동기 처리 비교 검증</li>
+                                </ul>
+                            </div>
+                            <div class="story-block">
+                                <h5>결과</h5>
+                                <p class="challenge-result-copy">
+                                    병목 원인이 단순 AI 지연이 아니라 동기 처리로 인한 스레드 점유와 대기열 누적에 있음을 확인했고,
+                                    비동기 처리 구조 도입 후 서버 안정성과 처리 흐름을 개선할 수 있었습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>성능 개선 수치</h4>
+                        <div class="project-hero-metrics">
+                            <div class="metric-card">
+                                <span class="metric-label">평균 처리 시간</span>
+                                <strong>30,654ms → 102.81ms</strong>
+                                <p>AI 분석 API 응답 시간 개선</p>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">동시 처리량</span>
+                                <strong>80건 → 580건</strong>
+                                <p>동일 조건 부하 테스트 기준 처리량 개선</p>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">전체 분석 완료 시간</span>
+                                <strong>40,737ms → 25,347ms</strong>
+                                <p>전체 영상 분석 흐름 시간 단축</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>비동기 처리 흐름</h4>
+                        <div class="architecture-image-wrap">
+                            <img src="assets/images/DADAP/system-architecture.png" alt="DADAP 시스템 아키텍처 다이어그램" class="architecture-image">
+                        </div>
+                        <p class="architecture-copy">
+                            Client 요청을 API Server가 즉시 접수하고, Async Worker가 AI API 호출과 상태 업데이트를 분리 처리하는 구조로 설계했습니다.
+                        </p>
+                    </section>
+
+                    <section class="project-readme-section readme-footer-grid">
+                        <div>
+                            <h4>내 역할</h4>
+                            <ul class="project-bullet-list">
+                                <li>외부 AI 서버와 연동되는 영상 분석 요청 API와 처리 흐름을 담당했습니다.</li>
+                                <li>동기/비동기 구조 비교 실험을 위한 Mock AI 서버 지연 환경과 k6 부하 테스트를 설계했습니다.</li>
+                                <li>상태 기반 처리 구조와 예외 처리 흐름을 설계해 분석 작업의 진행 상태를 추적 가능하게 만들었습니다.</li>
+                            </ul>
+                        </div>
+                            <div>
+                                <h4>고찰</h4>
+                                <ul class="project-bullet-list">
+                                    <li>장시간 외부 AI 호출이 있는 기능은 요청 흐름과 상태 관리를 함께 설계해야 안정적으로 동작한다는 점을 배웠습니다.</li>
+                                    <li>비동기 구조의 필요성을 감이 아니라 k6 부하 테스트로 검증한 경험이 가장 컸습니다.</li>
+                                    <li>상태 기반 처리는 진행 상황 표시가 아니라 장시간 작업을 신뢰성 있게 추적하기 위한 핵심 설계였습니다.</li>
+                                </ul>
+                            </div>
+                    </section>
+                </div>
                 </div>
             </article>
 
