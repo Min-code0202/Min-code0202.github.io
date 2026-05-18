@@ -218,10 +218,11 @@
                                 DADAP은 CS 면접과 포트폴리오 면접을 반복 연습하고, 답변 분석 결과와 피드백, 꼬리질문으로 다시 복기할 수 있도록 만든 AI 면접 분석 플랫폼입니다.
                             </p>
                             <div class="project-info-table">
-                                <div><strong>역할</strong><span>Backend Developer, AI 분석 요청 처리 및 성능 검증</span></div>
+                                <div><strong>역할</strong><span>백엔드 담당 · AI 분석 요청 처리 및 성능 검증</span></div>
                                 <div><strong>인원</strong><span>프론트엔드 3명 / 백엔드 3명</span></div>
                                 <div><strong>기간</strong><span>2026.01.06 - 2026.02.13</span></div>
-                                <div><strong>수상</strong><span>SSAFY 특화 프로젝트 우수상(2등)</span></div>
+                                <div><strong>수상</strong><span>SSAFY 공통 프로젝트 우수상(2등)</span></div>
+                                <div><strong>GitHub</strong><span><a href="https://github.com/Min-code0202/Dadap-public" target="_blank" rel="noreferrer">github.com/Min-code0202/Dadap-public</a></span></div>
                             </div>
                         </div>
                         <div class="project-readme-visual">
@@ -234,19 +235,40 @@
                         <div class="stack-groups">
                             <div>
                                 <strong>Backend</strong>
-                                <span>Java 21, Spring Boot 3.5.9, Spring Security 3.5.9, Spring Data JPA 3.5.9, JJWT 0.12.5, Spring Retry, SpringDoc OpenAPI 2.7.0, AWS SDK S3 2.25.66</span>
+                                <div class="stack-tags">
+                                    <span>Java 21</span>
+                                    <span>Spring Boot 3.5.9</span>
+                                    <span>Spring Security 3.5.9</span>
+                                    <span>Spring Data JPA 3.5.9</span>
+                                    <span>JJWT 0.12.5</span>
+                                    <span>Spring Retry</span>
+                                    <span>SpringDoc OpenAPI 2.7.0</span>
+                                    <span>AWS SDK S3 2.25.66</span>
+                                </div>
                             </div>
                             <div>
                                 <strong>AI Server</strong>
-                                <span>FastAPI 0.128.0</span>
+                                <div class="stack-tags">
+                                    <span>FastAPI 0.128.0</span>
+                                </div>
                             </div>
                             <div>
                                 <strong>Frontend</strong>
-                                <span>React 19.2.0, Vite 7.2.4, TypeScript 5.9.3, Tailwind CSS 4.1.18, Axios 1.13.3</span>
+                                <div class="stack-tags">
+                                    <span>React 19.2.0</span>
+                                    <span>Vite 7.2.4</span>
+                                    <span>TypeScript 5.9.3</span>
+                                    <span>Tailwind CSS 4.1.18</span>
+                                    <span>Axios 1.13.3</span>
+                                </div>
                             </div>
                             <div>
                                 <strong>Infra / Test</strong>
-                                <span>Docker, AWS, k6</span>
+                                <div class="stack-tags">
+                                    <span>Docker</span>
+                                    <span>AWS</span>
+                                    <span>k6</span>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -284,89 +306,115 @@
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>핵심 문제 해결</h4>
-                        <p class="project-problem-intro">
-                            이 프로젝트의 핵심은 AI 분석 기능 자체보다, 장시간 외부 AI 요청이 포함된 처리를 어떻게 서버 구조 안에서 안정적으로 다룰 것인가였습니다.
-                        </p>
-                        <div class="readme-story">
-                            <div class="story-block">
-                                <h5>문제</h5>
-                                <ul class="project-bullet-list">
-                                    <li>AI 요청을 동기 방식으로 처리하면서 응답 지연이 발생했습니다.</li>
-                                    <li>외부 AI API 응답을 기다리는 동안 서버 스레드가 장시간 점유되었습니다.</li>
-                                    <li>요청이 늘어날수록 다음 요청들이 대기열에 쌓이며 처리량이 급감했습니다.</li>
-                                </ul>
-                            </div>
-                            <div class="story-block">
-                                <h5>해결</h5>
-                                <ul class="project-bullet-list">
-                                    <li>AI 요청 처리 흐름을 비동기 구조로 전환</li>
-                                    <li>상태 엔티티를 <code>QUEUED / RUNNING / DONE / FAILED</code> 로 설계</li>
-                                    <li>즉시 <code>202 Accepted</code> 반환 후 백그라운드 작업으로 분리</li>
-                                    <li>외부 AI 호출 실패에 대비한 재시도 및 상태 추적 구조 보완</li>
-                                    <li>k6 기반 부하 테스트로 동기/비동기 처리 비교 검증</li>
-                                </ul>
-                            </div>
-                            <div class="story-block">
-                                <h5>결과</h5>
-                                <p class="challenge-result-copy">
-                                    병목 원인이 단순 AI 지연이 아니라 동기 처리로 인한 스레드 점유와 대기열 누적에 있음을 확인했고,
-                                    비동기 처리 구조 도입 후 서버 안정성과 처리 흐름을 개선할 수 있었습니다.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>성능 개선 수치</h4>
-                        <div class="project-hero-metrics">
-                            <div class="metric-card">
-                                <span class="metric-label">평균 처리 시간</span>
-                                <strong>30,654ms → 102.81ms</strong>
-                                <p>AI 분석 API 응답 시간 개선</p>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-label">동시 처리량</span>
+                        <h4>핵심 성과</h4>
+                        <div class="impact-hero">
+                            <div>
+                                <span>동시 처리량 개선</span>
                                 <strong>80건 → 580건</strong>
-                                <p>동일 조건 부하 테스트 기준 처리량 개선</p>
+                                <p>k6 20VU 동일 부하 테스트 기준</p>
                             </div>
-                            <div class="metric-card">
-                                <span class="metric-label">전체 분석 완료 시간</span>
-                                <strong>40,737ms → 25,347ms</strong>
-                                <p>전체 영상 분석 흐름 시간 단축</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>비동기 처리 흐름</h4>
-                        <div class="architecture-image-wrap">
-                            <img src="assets/images/DADAP/system-architecture.png" alt="DADAP 시스템 아키텍처 다이어그램" class="architecture-image">
-                        </div>
-                        <p class="architecture-copy">
-                            Client 요청을 API Server가 즉시 접수하고, Async Worker가 AI API 호출과 상태 업데이트를 분리 처리하는 구조로 설계했습니다.
-                        </p>
-                    </section>
-
-                    <section class="project-readme-section readme-footer-grid">
-                        <div>
-                            <h4>내 역할</h4>
-                            <ul class="project-bullet-list">
-                                <li>외부 AI 서버와 연동되는 영상 분석 요청 API와 처리 흐름을 담당했습니다.</li>
-                                <li>동기/비동기 구조 비교 실험을 위한 Mock AI 서버 지연 환경과 k6 부하 테스트를 설계했습니다.</li>
-                                <li>상태 기반 처리 구조와 예외 처리 흐름을 설계해 분석 작업의 진행 상태를 추적 가능하게 만들었습니다.</li>
+                            <ul>
+                                <li>요청 접수와 AI 분석 작업 분리</li>
+                                <li>상태 기반 비동기 처리 구조 도입</li>
+                                <li>AI 응답 대기 중 요청 스레드 점유 완화</li>
                             </ul>
                         </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>백엔드 담당 역할</h4>
+                        <div class="role-strip">
                             <div>
-                                <h4>고찰</h4>
-                                <ul class="project-bullet-list">
-                                    <li>장시간 외부 AI 호출이 있는 기능은 요청 흐름과 상태 관리를 함께 설계해야 안정적으로 동작한다는 점을 배웠습니다.</li>
-                                    <li>비동기 구조의 필요성을 감이 아니라 k6 부하 테스트로 검증한 경험이 가장 컸습니다.</li>
-                                    <li>상태 기반 처리는 진행 상황 표시가 아니라 장시간 작업을 신뢰성 있게 추적하기 위한 핵심 설계였습니다.</li>
+                                <span>API</span>
+                                <strong>AI 분석 요청 API 및 결과 조회 흐름 구현</strong>
+                            </div>
+                            <div>
+                                <span>Async</span>
+                                <strong><code>AnalysisJob</code> 기반 상태 관리 구조 설계</strong>
+                            </div>
+                            <div>
+                                <span>Test</span>
+                                <strong>k6 부하 테스트로 구조 변경 전후 검증</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>트러블슈팅: AI 분석 요청 병목</h4>
+                        <div class="problem-story compact-story">
+                            <div class="problem-story-main">
+                                <span>문제</span>
+                                <h5>동시 접속 테스트에서 다음 질문 전환이 30초 이상 지연</h5>
+                                <p>AI 서버 응답을 기다리는 동안 백엔드 요청 스레드가 점유되는 동기 처리 구조가 원인이었습니다.</p>
+                            </div>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p><code>202 Accepted</code>로 요청을 먼저 접수하고 AI 호출은 <code>@Async</code> 작업으로 분리</p>
+                                </div>
+                                <div>
+                                    <span>보완</span>
+                                    <p><code>QUEUED / RUNNING / DONE / FAILED</code> 상태로 작업 진행과 결과 조회 흐름 분리</p>
+                                </div>
+                                <div>
+                                    <span>검증</span>
+                                    <p>k6 20VU 테스트로 동기/비동기 구조의 처리량과 완료 시간 비교</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>검증 결과</h4>
+                        <div class="project-hero-metrics">
+                            <div class="metric-card">
+                                <span class="metric-label">전체 분석 완료 시간</span>
+                                <strong><span>40,737ms</span><em>→</em><span>25,347ms</span></strong>
+                                <p>전체 영상 분석 흐름 시간 단축</p>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">즉시 응답 구조</span>
+                                <strong><span>30,654ms</span><em>→</em><span>102ms</span></strong>
+                                <p>AI 작업 완료 대기 없이 요청 접수</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>설계 과정에서 고민한 부분</h4>
+                        <div class="decision-list">
+                            <div>
+                                <strong>단순 <code>@Async</code>만으로 충분할까?</strong>
+                                <ul>
+                                    <li>백그라운드 처리만으로는 완료/실패 여부를 알기 어려움</li>
+                                    <li>결과 재조회가 필요해 상태 저장 구조 추가</li>
+                                    <li><code>AnalysisJob</code>과 결과 조회 API로 흐름 분리</li>
                                 </ul>
                             </div>
+                            <div>
+                                <strong>왜 k6로 검증했는가?</strong>
+                                <ul>
+                                    <li>체감 지연만으로는 구조 변경 근거가 부족함</li>
+                                    <li>동시 요청 상황을 재현해 병목 원인 확인</li>
+                                    <li>처리량과 전체 완료 시간을 수치로 비교</li>
+                                </ul>
+                            </div>
+                        </div>
                     </section>
-                </div>
+
+                    <section class="project-readme-section">
+                        <h4>고찰</h4>
+                        <div class="reflection-note">
+                            <p>
+                                외부 AI API처럼 응답 시간이 긴 작업은 요청 접수와 작업 완료를 분리해야 사용자 응답성과 서버 안정성을 함께 확보할 수 있었습니다.
+                                다만 분석 실패 사유와 재시도 이력, 부하 테스트 결과를 더 체계적으로 남기지 못한 점은 아쉬움으로 남았습니다.
+                            </p>
+                            <ul class="project-bullet-list compact-list">
+                                <li>상태 기반 비동기 처리는 결과 조회와 실패 추적까지 함께 설계되어야 했습니다.</li>
+                                <li>부하 테스트 자동화와 결과 기록 체계를 보완하면 같은 조건의 재검증이 더 쉬웠을 것입니다.</li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
             </article>
 
