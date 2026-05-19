@@ -464,7 +464,7 @@
                         </div>
                         <div class="project-badges">
                             <span>2인 팀</span>
-                            <span>Full-Stack Developer</span>
+                            <span>Backend Developer · Full-Stack</span>
                             <span>2025.11 - 2025.12</span>
                         </div>
                     </div>
@@ -477,14 +477,14 @@
                                 실거래가 차트와 AI 리뷰 요약으로 매물 선택을 돕는 부동산 커뮤니티 플랫폼입니다.
                             </p>
                             <div class="project-info-table">
-                                <div><strong>역할</strong><span>풀스택 · 인증/사용자/게시판/스토리지 · DB 설계와 인덱스·쿼리 튜닝</span></div>
+                                <div><strong>역할</strong><span>백엔드 도메인(인증·사용자·게시판·스토리지) · DB 설계와 쿼리 튜닝 · 프론트엔드 구성</span></div>
                                 <div><strong>인원</strong><span>2명</span></div>
                                 <div><strong>기간</strong><span>2025.11 - 2025.12</span></div>
                                 <div><strong>GitHub</strong><span><a href="https://github.com/ZipCheck" target="_blank" rel="noreferrer">github.com/ZipCheck</a></span></div>
                             </div>
                         </div>
                         <div class="project-readme-visual">
-                            <img src="assets/images/ZipCheck/homepage.jpg" alt="ZipCheck 홈 화면">
+                            <img src="assets/images/ZipCheck/aipage2.png" alt="ZipCheck AI RAG 인덱싱 흐름">
                         </div>
                     </div>
 
@@ -504,6 +504,12 @@
                                 </div>
                             </div>
                             <div>
+                                <strong>Database</strong>
+                                <div class="stack-tags">
+                                    <span>MySQL 8.0</span>
+                                </div>
+                            </div>
+                            <div>
                                 <strong>Frontend</strong>
                                 <div class="stack-tags">
                                     <span>Vue 3</span>
@@ -513,12 +519,6 @@
                                     <span>Tailwind CSS 3.4</span>
                                     <span>Chart.js 4.5</span>
                                     <span>Axios</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Database</strong>
-                                <div class="stack-tags">
-                                    <span>MySQL 8.0</span>
                                 </div>
                             </div>
                             <div>
@@ -616,21 +616,21 @@
                         <div class="problem-story compact-story">
                             <div class="problem-story-main">
                                 <span>문제</span>
-                                <h5>가격 범위 검색 시 Full Table Scan으로 720만 건 데이터 응답 불능</h5>
-                                <p>거래 금액이 <code>"123,000"</code>처럼 쉼표 포함 <strong>VARCHAR</strong>로 저장되어, 가격 범위 검색마다 <code>CAST</code>·<code>REPLACE</code> 함수 적용이 필요했습니다. 함수를 적용한 컬럼은 인덱스를 탈 수 없어 720만 건 규모에서는 Full Table Scan이 발생했습니다.</p>
+                                <h5>WHERE/JOIN 컬럼에 함수가 적용되어 720만 건 데이터에서 Full Table Scan 발생</h5>
+                                <p>가격 검색에서는 거래 금액이 <code>"123,000"</code>처럼 쉼표 포함 <strong>VARCHAR</strong>로 저장되어 매번 <code>CAST</code>·<code>REPLACE</code> 함수가 적용되었습니다. 지역 JOIN에서는 법정동 코드 10자리에 <code>LEFT(dong_code, 5)</code> 함수가 적용되었습니다. 두 경우 모두 함수가 적용된 컬럼은 인덱스를 탈 수 없어, 720만 건 규모에서는 3-way JOIN과 함께 Full Table Scan이 발생했습니다.</p>
                             </div>
                             <div class="problem-story-grid">
                                 <div>
                                     <span>해결</span>
-                                    <p><strong>Generated Column (STORED)</strong> <code>deal_amount_num</code>을 추가해 정수형 데이터를 자동 동기화하고 인덱스를 부여</p>
+                                    <p><strong>Generated Column (STORED)</strong>을 두 곳에 동일 패턴으로 적용 — 가격은 <code>deal_amount_num</code>, JOIN은 <code>sgg_prefix</code>로 함수 연산을 DB가 미리 계산해 인덱스 부여</p>
                                 </div>
                                 <div>
                                     <span>보완</span>
-                                    <p>아파트 + 날짜 / 면적 / 금액 조합을 위한 <strong>복합 인덱스 3종</strong>으로 다차원 필터링 가속</p>
+                                    <p>아파트 + 날짜 / 면적 / 금액 조합 <strong>복합 인덱스 3종</strong>으로 다차원 필터링 가속, JOIN용 <code>(sgg_prefix, dong_name)</code> 인덱스 추가</p>
                                 </div>
                                 <div>
                                     <span>검증</span>
-                                    <p>MySQL <strong>SQL Profiling</strong>과 <code>EXPLAIN</code>으로 인덱스 가동률(SARGability)을 단계별로 측정</p>
+                                    <p>SQL Profiling으로 CPU 시간을 측정하고, <code>EXPLAIN</code>으로 실행 계획 변화(<code>type: ALL → range</code>, <code>key: NULL → idx_hd_apt_amount</code>)를 확인해 인덱스 가동률(SARGability)을 직접 증명</p>
                                 </div>
                             </div>
                         </div>
@@ -657,9 +657,9 @@
                                 <p>매회 발생하던 문자열 변환 연산 제거</p>
                             </div>
                             <div class="metric-card">
-                                <span class="metric-label">쿼리 실행 경로</span>
-                                <strong><span>Full Scan</span><em>→</em><span>Index Range Scan</span></strong>
-                                <p>EXPLAIN으로 인덱스 가동률 확보 확인</p>
+                                <span class="metric-label">운영 쿼리 실측 (720만 건 · 서울 조회)</span>
+                                <strong><span>67초</span><em>→</em><span>2초</span></strong>
+                                <p>EXPLAIN ANALYZE 기준 3-way JOIN 종합 쿼리</p>
                             </div>
                         </div>
                     </section>
@@ -676,11 +676,12 @@
                                 </ul>
                             </div>
                             <div>
-                                <strong>왜 애플리케이션이 아닌 DB에서 해결했는가?</strong>
+                                <strong>왜 Generated Column을 선택했는가? (4가지 대안 비교)</strong>
                                 <ul>
-                                    <li>Java 레벨 변환은 매 요청마다 연산 비용 발생</li>
-                                    <li>Generated Column(STORED)은 한 번 계산 후 인덱스로 활용</li>
-                                    <li>서버 CPU 부하를 약 15% 절감</li>
+                                    <li><strong>CAST/REPLACE 유지</strong> — 함수 적용으로 인덱스 무력화, 데이터 증가 시 비용 폭증</li>
+                                    <li><strong>원본 컬럼 타입 변경</strong> — 공공데이터 원본 보존 불가, 기존 적재 로직 마이그레이션 리스크</li>
+                                    <li><strong>별도 숫자 컬럼 + 애플리케이션 관리</strong> — 두 컬럼 정합성을 앱 코드가 책임져야 함</li>
+                                    <li><strong>Generated Column (STORED)</strong> — 원본 보존, 정합성은 DB가 보장, 인덱스 활용 가능</li>
                                 </ul>
                             </div>
                             <div>
@@ -689,6 +690,14 @@
                                     <li>API 측정은 네트워크·WAS 변수가 섞여 DB 최적화 효과 왜곡</li>
                                     <li><code>SHOW PROFILE CPU</code>로 파싱·실행 단계별 CPU 시간 분리</li>
                                     <li><code>EXPLAIN</code>과 병행해 인덱스 가동률을 직접 증명</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>왜 <code>apt_seq</code>를 복합 인덱스 맨 앞에 두었는가?</strong>
+                                <ul>
+                                    <li>서비스 핵심 조회 패턴은 "특정 아파트의 거래 내역" 조회</li>
+                                    <li><code>apt_seq</code>로 먼저 범위를 좁힌 뒤 날짜·면적·가격 조건 적용</li>
+                                    <li>선택도가 가장 높은 컬럼을 선두에 두어 인덱스 가지치기 효율 극대화</li>
                                 </ul>
                             </div>
                         </div>
