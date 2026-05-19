@@ -149,6 +149,7 @@ a:hover {
 
 .scope-list li {
     display: grid;
+    align-content: start;
     gap: 3px;
     padding-left: 14px;
     border-left: 2px solid #d4e3de;
@@ -508,7 +509,16 @@ a:hover {
 }
 
 .project-card + .project-card {
-    margin-top: 14px;
+    margin-top: 40px;
+}
+
+.project-kicker {
+    margin: 0;
+    color: var(--warm);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .project-header {
@@ -892,8 +902,8 @@ a:hover {
 
 .readme-gallery {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .readme-shot {
@@ -907,7 +917,7 @@ a:hover {
 .readme-shot img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     background: #fafcfc;
 }
