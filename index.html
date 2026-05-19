@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="top">
+    <nav class="site-nav">
+        <div class="site-nav-inner">
+            <a class="site-nav-brand" href="#top">JM · Portfolio</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
     <main class="container">
         <section class="panel profile-panel">
             <div class="profile-layout">
@@ -44,14 +55,14 @@
             </div>
         </section>
 
-        <section class="panel">
+        <section class="panel" id="about">
             <div class="section-heading">
                 <span>01</span>
                 <h2>About Me</h2>
             </div>
             <p class="lead-text">
-                컴퓨터공학 전공을 바탕으로 백엔드 개발과 데이터베이스 설계 역량을 쌓아왔습니다.
-                기능 구현에 머무르지 않고 요청이 처리되는 흐름, 데이터 정합성, 예외 상황을 함께 고려해 안정적인 서비스를 만드는 데 관심이 있습니다.
+                컴퓨터공학 전공을 바탕으로 백엔드 개발과 데이터베이스 설계를 다뤄왔습니다.
+                기능 구현뿐 아니라 요청이 처리되는 흐름, 데이터 정합성, 예외 상황을 함께 고려해 안정적인 서비스를 만드는 데 관심이 있습니다.
                 협업 과정에서는 구조와 결정 근거를 기록하고 공유하는 문화를 중요하게 생각합니다.
             </p>
             <div class="summary-grid">
@@ -67,11 +78,17 @@
                 <article>
                     <h3>성장 방향</h3>
                     <p>문제를 명확히 정의하고, 팀이 이해하기 쉬운 구조와 기록을 남기는 개발자</p>
+                    <ul class="focus-list">
+                        <li>설계 결정의 근거를 ADR로 남기기</li>
+                        <li>트러블슈팅 흐름을 회고 문서로 정리</li>
+                        <li>PR과 코드 리뷰에서 변경 범위와 이유 명시</li>
+                        <li>도메인 모델과 계층 구조를 읽기 쉽게 유지</li>
+                    </ul>
                 </article>
             </div>
         </section>
 
-        <section class="panel">
+        <section class="panel" id="career">
             <div class="section-heading">
                 <span>02</span>
                 <h2>Career Snapshot</h2>
@@ -87,7 +104,7 @@
                         </li>
                         <li>
                             <time>2017.03 - 2019.02</time>
-                            <strong>대영 고등학교 졸업</strong>
+                            <strong>대영고등학교 졸업</strong>
                         </li>
                     </ul>
                 </article>
@@ -121,7 +138,7 @@
             </div>
         </section>
 
-        <section class="panel">
+        <section class="panel" id="skills">
             <div class="section-heading">
                 <span>03</span>
                 <h2>Skills and Tools</h2>
@@ -139,7 +156,7 @@
                     <ul class="experience-points">
                         <li><strong>요청 흐름 분리</strong> REST API와 계층형 서버 구조 구현</li>
                         <li><strong>정합성 관리</strong> 트랜잭션을 고려한 도메인 로직 구성</li>
-                        <li><strong>예외 처리</strong> 비동기 처리와 API 응답 흐름 설계</li>
+                        <li><strong>비동기 응답</strong> 분석 작업과 결과 조회 흐름 분리 설계</li>
                     </ul>
                 </article>
 
@@ -169,17 +186,6 @@
 
                 <article class="skill-scan-card">
                     <div class="skill-scan-head">
-                        <h3>Frontend</h3>
-                        <p>React · Vite</p>
-                    </div>
-                    <ul class="experience-points">
-                        <li><strong>API 연동</strong> 백엔드 응답 구조에 맞춘 화면 상태 처리</li>
-                        <li><strong>SPA 구조</strong> 라우팅과 데이터 연동 흐름 구성</li>
-                    </ul>
-                </article>
-
-                <article class="skill-scan-card">
-                    <div class="skill-scan-head">
                         <h3>Tools & Collaboration</h3>
                         <p>Git · GitHub · Notion · Mattermost</p>
                     </div>
@@ -190,9 +196,12 @@
                     </ul>
                 </article>
             </div>
+            <p class="skill-extra-note">
+                이 외에 <strong>React · Vite</strong> 기반으로 백엔드 응답에 맞춘 화면 상태 처리와 SPA 라우팅 구성 경험이 있습니다.
+            </p>
         </section>
 
-        <section class="panel">
+        <section class="panel" id="projects">
             <div class="section-heading">
                 <span>04</span>
                 <h2>Projects</h2>
@@ -218,7 +227,7 @@
                                 DADAP은 CS 면접과 포트폴리오 면접을 반복 연습하고, 답변 분석 결과와 피드백, 꼬리질문으로 다시 복기할 수 있도록 만든 AI 면접 분석 플랫폼입니다.
                             </p>
                             <div class="project-info-table">
-                                <div><strong>역할</strong><span>백엔드 담당 · AI 분석 요청 처리 및 성능 검증</span></div>
+                                <div><strong>역할</strong><span>백엔드 담당 · 비디오(비언어 지표) 분석 비동기 처리 및 성능 검증</span></div>
                                 <div><strong>인원</strong><span>프론트엔드 3명 / 백엔드 3명</span></div>
                                 <div><strong>기간</strong><span>2026.01.06 - 2026.02.13</span></div>
                                 <div><strong>수상</strong><span>SSAFY 공통 프로젝트 우수상(2등)</span></div>
@@ -306,46 +315,55 @@
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>핵심 성과</h4>
-                        <div class="impact-hero">
-                            <div>
-                                <span>동시 처리량 개선</span>
-                                <strong>80건 → 580건</strong>
-                                <p>k6 20VU 동일 부하 테스트 기준</p>
-                            </div>
-                            <ul>
-                                <li>요청 접수와 AI 분석 작업 분리</li>
-                                <li>상태 기반 비동기 처리 구조 도입</li>
-                                <li>AI 응답 대기 중 요청 스레드 점유 완화</li>
-                            </ul>
-                        </div>
+                        <h4>백엔드 구현 범위</h4>
+                        <p class="section-note compact-note">
+                            다음 도메인의 설계와 구현을 담당했습니다.
+                        </p>
+                        <ul class="scope-list">
+                            <li>
+                                <strong>면접 도메인</strong>
+                                <span>면접장 생성 · 질문/꼬리질문 생성 · 턴 미디어 업로드 · 리포트 생성/조회 · 면접 삭제</span>
+                            </li>
+                            <li>
+                                <strong>AI 서버 연동</strong>
+                                <span>WebClient 기반 클라이언트 · 오디오/비디오 분석 요청 분리 · <code>@Async</code> 비동기 처리 · <code>AnalysisJob</code> 상태 관리</span>
+                            </li>
+                            <li>
+                                <strong>커뮤니티 게시판</strong>
+                                <span>게시글 CRUD · 댓글 · 좋아요 · 목록 페이징 · 이미지 첨부</span>
+                            </li>
+                            <li>
+                                <strong>CS 학습 페이지</strong>
+                                <span>학습 질문 목록/상세 조회 · 키워드/꼬리질문 포함 응답 · 질문 조회수 집계</span>
+                            </li>
+                            <li>
+                                <strong>마이페이지 · 사용자</strong>
+                                <span>마이페이지 API · 닉네임 중복 체크/제한 · 회원 탈퇴 · 프로필 이미지 · 최근 활동 정보</span>
+                            </li>
+                            <li>
+                                <strong>AWS S3 스토리지</strong>
+                                <span>음성/영상 파일 업로드 · 재생용 presigned URL 발급</span>
+                            </li>
+                        </ul>
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>백엔드 담당 역할</h4>
-                        <div class="role-strip">
-                            <div>
-                                <span>API</span>
-                                <strong>AI 분석 요청 API 및 결과 조회 흐름 구현</strong>
-                            </div>
-                            <div>
-                                <span>Async</span>
-                                <strong><code>AnalysisJob</code> 기반 상태 관리 구조 설계</strong>
-                            </div>
-                            <div>
-                                <span>Test</span>
-                                <strong>k6 부하 테스트로 구조 변경 전후 검증</strong>
-                            </div>
+                        <h4>아키텍처</h4>
+                        <div class="architecture-image-wrap">
+                            <img class="architecture-image" src="assets/images/DADAP/architecture.png" alt="DADAP 아키텍처 다이어그램">
                         </div>
+                        <p class="architecture-copy">
+                            비디오(비언어 지표) 분석 비동기 처리 흐름을 정리한 구조도입니다.
+                        </p>
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>트러블슈팅: AI 분석 요청 병목</h4>
+                        <h4>트러블슈팅: 비디오(비언어 지표) 분석 요청 병목</h4>
                         <div class="problem-story compact-story">
                             <div class="problem-story-main">
                                 <span>문제</span>
-                                <h5>동시 접속 테스트에서 다음 질문 전환이 30초 이상 지연</h5>
-                                <p>AI 서버 응답을 기다리는 동안 백엔드 요청 스레드가 점유되는 동기 처리 구조가 원인이었습니다.</p>
+                                <h5>AI 서버 지연 2초가 사용자 체감 30초 응답으로 증폭</h5>
+                                <p>AI 서버의 실제 지연은 약 2초였으나, 응답을 기다리는 동안 WAS 워커 스레드가 계속 점유되면서 후속 요청이 큐에서 대기하는 <strong>Thread Starvation</strong>이 발생했습니다. 이로 인해 사용자가 체감하는 응답 대기는 약 30초까지 누적되었습니다.</p>
                             </div>
                             <div class="problem-story-grid">
                                 <div>
@@ -358,14 +376,26 @@
                                 </div>
                                 <div>
                                     <span>검증</span>
-                                    <p>k6 20VU 테스트로 동기/비동기 구조의 처리량과 완료 시간 비교</p>
+                                    <p>외부 네트워크 변수를 제거하기 위해 <strong>Mock AI 서버</strong>를 구축하고, k6 20VU로 동기/비동기 구조의 처리량과 완료 시간 비교</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>검증 결과</h4>
+                        <h4>성과와 검증 결과</h4>
+                        <div class="impact-hero">
+                            <div>
+                                <span>동시 처리량 개선</span>
+                                <strong>80건 → 580건</strong>
+                                <p>k6 20VU 동일 부하 테스트 기준</p>
+                            </div>
+                            <ul>
+                                <li>비디오 분석 요청 접수와 AI 호출 작업 분리</li>
+                                <li>상태 기반 비동기 처리 구조 도입</li>
+                                <li>AI 응답 대기 중 요청 스레드 점유 완화</li>
+                            </ul>
+                        </div>
                         <div class="project-hero-metrics">
                             <div class="metric-card">
                                 <span class="metric-label">전체 분석 완료 시간</span>
@@ -373,7 +403,7 @@
                                 <p>전체 영상 분석 흐름 시간 단축</p>
                             </div>
                             <div class="metric-card">
-                                <span class="metric-label">즉시 응답 구조</span>
+                                <span class="metric-label">비동기 분리 후 응답 시간</span>
                                 <strong><span>30,654ms</span><em>→</em><span>102ms</span></strong>
                                 <p>AI 작업 완료 대기 없이 요청 접수</p>
                             </div>
@@ -387,8 +417,16 @@
                                 <strong>단순 <code>@Async</code>만으로 충분할까?</strong>
                                 <ul>
                                     <li>백그라운드 처리만으로는 완료/실패 여부를 알기 어려움</li>
-                                    <li>결과 재조회가 필요해 상태 저장 구조 추가</li>
+                                    <li>결과 조회 시점에 작업 진행 상태가 필요해 상태 저장 구조 추가</li>
                                     <li><code>AnalysisJob</code>과 결과 조회 API로 흐름 분리</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>왜 비디오만 비동기로 분리했는가?</strong>
+                                <ul>
+                                    <li>오디오 분석 결과는 꼬리질문 생성에 즉시 사용됨</li>
+                                    <li>비동기로 분리하면 다음 질문 흐름이 끊김</li>
+                                    <li>오디오는 동기 유지, 비디오만 비동기로 분리해 응답성 확보</li>
                                 </ul>
                             </div>
                             <div>
@@ -407,12 +445,9 @@
                         <div class="reflection-note">
                             <p>
                                 외부 AI API처럼 응답 시간이 긴 작업은 요청 접수와 작업 완료를 분리해야 사용자 응답성과 서버 안정성을 함께 확보할 수 있었습니다.
-                                다만 분석 실패 사유와 재시도 이력, 부하 테스트 결과를 더 체계적으로 남기지 못한 점은 아쉬움으로 남았습니다.
+                                다만 부하 테스트 응답 성공률이 약 75%에 머문 점은 아쉬움으로 남았는데, 비동기 폴링 타임아웃이 실제 AI 작업 시간보다 짧게 설정된 것이 원인이었습니다.
+                                향후에는 폴링 대신 <strong>SSE 기반 이벤트 전달</strong>로 전환해 상태 확인 구조를 더 안정적으로 다듬을 계획입니다.
                             </p>
-                            <ul class="project-bullet-list compact-list">
-                                <li>상태 기반 비동기 처리는 결과 조회와 실패 추적까지 함께 설계되어야 했습니다.</li>
-                                <li>부하 테스트 자동화와 결과 기록 체계를 보완하면 같은 조건의 재검증이 더 쉬웠을 것입니다.</li>
-                            </ul>
                         </div>
                     </section>
                 </div>

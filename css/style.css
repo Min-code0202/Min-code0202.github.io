@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background: var(--bg);
@@ -56,12 +60,110 @@ a:hover {
     color: var(--accent);
 }
 
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+}
+
+.site-nav-inner {
+    width: min(1040px, calc(100% - 40px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    height: 56px;
+}
+
+.site-nav-brand {
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav li a {
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav li a:hover {
+    color: var(--accent-dark);
+    border-bottom-color: var(--accent);
+}
+
 .container {
     width: min(1040px, calc(100% - 40px));
     margin: 28px auto 70px;
     display: flex;
     flex-direction: column;
     gap: 18px;
+}
+
+.panel[id] {
+    scroll-margin-top: 72px;
+}
+
+.skill-extra-note {
+    margin: 14px 2px 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.skill-extra-note strong {
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
+.compact-note {
+    margin: -4px 0 4px;
+    max-width: 880px;
+}
+
+.scope-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.scope-list li {
+    display: grid;
+    gap: 3px;
+    padding-left: 14px;
+    border-left: 2px solid #d4e3de;
+}
+
+.scope-list strong {
+    color: var(--ink);
+    font-size: 0.96rem;
+    line-height: 1.45;
+}
+
+.scope-list span {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
 }
 
 .panel {
@@ -1095,6 +1197,20 @@ a:hover {
 }
 
 @media (max-width: 760px) {
+    .site-nav-inner {
+        width: min(100% - 20px, 680px);
+        height: 52px;
+        gap: 10px;
+    }
+
+    .site-nav ul {
+        gap: 14px;
+    }
+
+    .site-nav li a {
+        font-size: 0.86rem;
+    }
+
     .container {
         width: min(100% - 20px, 680px);
         margin-top: 10px;
@@ -1134,6 +1250,7 @@ a:hover {
     .trouble-flow,
     .problem-story-grid,
     .decision-list,
+    .scope-list,
     .readme-story {
         grid-template-columns: 1fr;
     }
@@ -1168,6 +1285,14 @@ a:hover {
 }
 
 @media (max-width: 560px) {
+    .site-nav-brand {
+        display: none;
+    }
+
+    .site-nav-inner {
+        justify-content: center;
+    }
+
     .profile-info h1 {
         font-size: 2rem;
     }
