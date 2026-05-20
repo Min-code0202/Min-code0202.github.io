@@ -20,7 +20,17 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#career">Career</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li class="site-nav-dropdown">
+                    <a href="#projects">Projects</a>
+                    <div class="site-nav-submenu">
+                        <ul>
+                            <li><a href="#p-spacearcade"><span class="nav-sub-tag">Project 01</span>우주오락실</a></li>
+                            <li><a href="#p-dadap"><span class="nav-sub-tag">Project 02</span>DADAP</a></li>
+                            <li><a href="#p-zipcheck"><span class="nav-sub-tag">Project 03</span>ZipCheck</a></li>
+                            <li><a href="#p-etc">기타 프로젝트</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -210,7 +220,7 @@
                 <span>04</span>
                 <h2>Projects</h2>
             </div>
-            <article class="project-card">
+            <article class="project-card" id="p-spacearcade">
                 <div class="project-readme">
                     <div class="project-readme-head">
                         <p class="project-kicker">Project 01</p>
@@ -424,7 +434,7 @@
                 </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" id="p-dadap">
                 <div class="project-readme">
                     <div class="project-readme-head">
                         <p class="project-kicker">Project 02</p>
@@ -649,7 +659,7 @@
                 </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" id="p-zipcheck">
                 <div class="project-readme">
                     <div class="project-readme-head">
                         <p class="project-kicker">Project 03</p>
@@ -892,6 +902,29 @@
                     </section>
                 </div>
             </article>
+
+            <div class="minor-projects" id="p-etc">
+                <h3 class="minor-projects-heading">기타 프로젝트</h3>
+                <p class="minor-projects-note">대표 프로젝트 외에 학습·경험 차원에서 진행한 프로젝트입니다.</p>
+                <ul class="minor-project-list">
+                    <li>
+                        <time>2026.03 - 2026.04</time>
+                        <div class="mp-body">
+                            <h4>Dahaeng (다행)</h4>
+                            <p class="mp-desc">여행 취향과 일정 조건을 입력하면 맞춤 여행지를 추천해 주는 여행지 추천 서비스입니다.</p>
+                            <span class="mp-tags">Java · Spring Boot · MySQL</span>
+                        </div>
+                    </li>
+                    <li>
+                        <time>2023.09 - 2024.05</time>
+                        <div class="mp-body">
+                            <h4>AnyWhereMap (AWM)</h4>
+                            <p class="mp-desc">지도 위에 위치 기반 정보를 실시간으로 등록하고 공유하는 정보 공유 지도 서비스입니다.</p>
+                            <span class="mp-tags">Spring Boot · MySQL · JavaScript</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
 </body>
