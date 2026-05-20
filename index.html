@@ -213,6 +213,192 @@
                     <div class="project-readme-head">
                         <p class="project-kicker">Project 01</p>
                         <div>
+                            <h3>우주오락실</h3>
+                            <p>최대 100명 동시 참여 실시간 멀티플레이 미니게임 파티 플랫폼</p>
+                        </div>
+                        <div class="project-badges">
+                            <span>6인 팀</span>
+                            <span>Backend Developer · Infra</span>
+                            <span>2026.02 - 2026.04</span>
+                        </div>
+                    </div>
+
+                    <div class="project-readme-hero">
+                        <div class="project-readme-copy">
+                            <h4>프로젝트 소개</h4>
+                            <p>
+                                우주오락실은 차원을 넘나들며 최대 100명이 동시에 겨루는 실시간 멀티플레이 미니게임 파티 플랫폼입니다.
+                                매 라운드 무작위 미니게임으로 워프하고, 누적 점수로 최종 우승자를 가립니다.
+                            </p>
+                            <div class="project-info-table">
+                                <div><strong>역할</strong><span>백엔드 · 인프라 — Redis 기반 실시간 메시징 · 미니게임 3종 · 배포/모니터링</span></div>
+                                <div><strong>인원</strong><span>6명</span></div>
+                                <div><strong>기간</strong><span>2026.02 - 2026.04</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="readme-gallery">
+                        <figure class="readme-shot">
+                            <img src="assets/images/SpaceArcade/login.png" alt="우주오락실 홈 화면">
+                            <figcaption><strong>홈</strong><span>닉네임 입력 즉시 게스트 세션 발급</span></figcaption>
+                        </figure>
+                        <figure class="readme-shot">
+                            <img src="assets/images/SpaceArcade/room-list.png" alt="우주오락실 정거장 목록 화면">
+                            <figcaption><strong>정거장 목록</strong><span>참여할 방을 탐색하는 목록 화면</span></figcaption>
+                        </figure>
+                        <figure class="readme-shot">
+                            <img src="assets/images/SpaceArcade/waiting-room.png" alt="우주오락실 대기실 화면">
+                            <figcaption><strong>대기실</strong><span>게임 시작 전 참가자가 모이는 화면</span></figcaption>
+                        </figure>
+                        <figure class="readme-shot">
+                            <img src="assets/images/SpaceArcade/result.png" alt="우주오락실 최종 결과 화면">
+                            <figcaption><strong>최종 결과</strong><span>차원 종료 후 누적 점수 순위</span></figcaption>
+                        </figure>
+                    </div>
+
+                    <section class="project-readme-section">
+                        <h4>기술 스택</h4>
+                        <div class="stack-groups">
+                            <div>
+                                <strong>Backend</strong>
+                                <div class="stack-tags">
+                                    <span>Java 17</span>
+                                    <span>Spring Boot 3.5.13</span>
+                                    <span>Spring Security</span>
+                                    <span>Spring Data JPA</span>
+                                    <span>WebSocket (STOMP)</span>
+                                    <span>JJWT 0.13.0</span>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Realtime · DB</strong>
+                                <div class="stack-tags">
+                                    <span>Redis 7</span>
+                                    <span>MySQL 8.0</span>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Frontend</strong>
+                                <div class="stack-tags">
+                                    <span>React 19</span>
+                                    <span>TypeScript</span>
+                                    <span>Vite</span>
+                                    <span>Zustand</span>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Infra · Monitoring</strong>
+                                <div class="stack-tags">
+                                    <span>Docker Compose</span>
+                                    <span>Nginx</span>
+                                    <span>Prometheus</span>
+                                    <span>Grafana</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>담당 업무</h4>
+                        <p class="section-note compact-note">
+                            백엔드 · 인프라 영역에서 다음을 담당했습니다.
+                        </p>
+                        <ul class="scope-list">
+                            <li>
+                                <strong>실시간 메시징 인프라</strong>
+                                <span>STOMP + Redis Pub/Sub 기반 멀티 BE cross-server 메시지 라우팅</span>
+                            </li>
+                            <li>
+                                <strong>미니게임 3종</strong>
+                                <span>그림 유사도 · 풍선 터뜨리기 · 거울 타자 — 핸들러 · 세션 · Redis state 구현</span>
+                            </li>
+                            <li>
+                                <strong>배포 인프라</strong>
+                                <span>Docker Compose 8개 컨테이너 · Nginx TLS 리버스 프록시 구성</span>
+                            </li>
+                            <li>
+                                <strong>모니터링</strong>
+                                <span>Prometheus · Grafana · node-exporter 메트릭 수집과 시각화</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>아키텍처</h4>
+                        <div class="architecture-image-wrap">
+                            <img class="architecture-image" src="assets/images/SpaceArcade/architecture.png" alt="우주오락실 시스템 아키텍처">
+                        </div>
+                        <p class="architecture-copy">
+                            Nginx 로드밸런서가 100명 이상의 트래픽을 여러 백엔드 인스턴스로 분산하고, 인스턴스 간 실시간 메시지는 Redis Pub/Sub으로 동기화하는 구조입니다.
+                        </p>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>트러블슈팅: 멀티 BE 클러스터 cross-server 메시지 라우팅</h4>
+                        <div class="problem-story compact-story">
+                            <div class="problem-story-main">
+                                <span>문제</span>
+                                <h5>다른 서버에 연결된 유저에게 랭킹·결과 PRIVATE 메시지가 유실</h5>
+                                <p>로드밸런싱으로 백엔드를 여러 대 띄우면, STOMP의 <code>convertAndSendToUser</code>는 호출한 서버의 로컬 세션 레지스트리(<code>SimpUserRegistry</code>)만 조회합니다. 대상 유저가 다른 서버에 연결돼 있으면 개인 랭킹·결과 메시지가 전달되지 못하고 유실됐습니다.</p>
+                            </div>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p>PRIVATE 메시지를 <code>(userId, destination, payload)</code> envelope으로 포장해 Redis Pub/Sub <code>/internal/private</code> 채널에 broadcast</p>
+                                </div>
+                                <div>
+                                    <span>보완</span>
+                                    <p>모든 서버가 envelope을 수신 → 각자 <code>convertAndSendToUser</code> 호출 → 유저 세션이 있는 서버만 실제 전송, 나머지는 no-op</p>
+                                </div>
+                                <div>
+                                    <span>검증</span>
+                                    <p>멀티 인스턴스 배포 환경에서 서로 다른 서버에 연결된 유저 간 메시지 정상 수신 확인</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>설계 과정에서 고민한 부분</h4>
+                        <div class="decision-list">
+                            <div>
+                                <strong>왜 Redis Pub/Sub인가? (sticky session·외부 브로커 대비)</strong>
+                                <ul>
+                                    <li>sticky session은 재접속·방 단위 broadcast 흐름과 맞지 않음</li>
+                                    <li>이미 게임 state 저장에 Redis를 쓰고 있어 Pub/Sub 추가 인프라 비용 0</li>
+                                    <li>RabbitMQ·Kafka는 현재 규모에 운영 부담만 큼</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>PRIVATE를 모든 서버에 broadcast하면 낭비 아닌가?</strong>
+                                <ul>
+                                    <li>유저 세션 위치를 추적하는 레지스트리를 따로 두는 방법도 검토</li>
+                                    <li>envelope이 작아 네트워크 비용보다 추적 구조의 복잡도가 더 큼</li>
+                                    <li>단순성을 택하고, 세션 없는 서버는 no-op로 자연스럽게 걸러지도록 설계</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>고찰</h4>
+                        <div class="reflection-note">
+                            <p>
+                                단일 서버를 전제로 동작하던 WebSocket 메시징이 멀티 인스턴스 환경에서는 그대로 깨진다는 것을 체감한 작업이었습니다.
+                                <code>convertAndSendToUser</code> 같은 추상화가 내부적으로 무엇을 가정하는지 이해해야 분산 환경의 함정을 피할 수 있다는 점,
+                                그리고 새 인프라를 더하기 전에 이미 가진 자원으로 풀 수 있는지 먼저 따지는 판단을 배웠습니다.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-readme">
+                    <div class="project-readme-head">
+                        <p class="project-kicker">Project 02</p>
+                        <div>
                             <h3>DADAP</h3>
                             <p>Whisper 및 GPT 기반 AI 면접 분석 · 피드백 서비스</p>
                         </div>
@@ -436,7 +622,7 @@
             <article class="project-card">
                 <div class="project-readme">
                     <div class="project-readme-head">
-                        <p class="project-kicker">Project 02</p>
+                        <p class="project-kicker">Project 03</p>
                         <div>
                             <h3>ZipCheck</h3>
                             <p>지도 기반 부동산 매물 · 감정 스티커 커뮤니티</p>
