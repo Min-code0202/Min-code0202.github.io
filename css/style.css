@@ -583,6 +583,14 @@ a:hover {
     align-items: start;
 }
 
+.project-readme-hero:not(:has(.project-readme-visual)) {
+    grid-template-columns: 1fr;
+}
+
+.project-readme-hero:not(:has(.project-readme-visual)) .project-info-table div:first-child {
+    grid-column: 1 / -1;
+}
+
 .project-readme-copy {
     min-width: 0;
 }
