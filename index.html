@@ -394,6 +394,14 @@
                         <h4>설계 과정에서 고민한 부분</h4>
                         <div class="decision-list">
                             <div>
+                                <strong>왜 <code>@Async</code>를 선택했는가? (다른 비동기 방식 대비)</strong>
+                                <ul>
+                                    <li>직접 스레드·<code>CompletableFuture</code> 대비 풀 관리가 선언적, 추가 인프라 0</li>
+                                    <li>기존 MVC·JPA 스택을 유지하며 무거운 작업만 오프로딩</li>
+                                    <li>제한된 스레드 풀이 외부 AI 서버 동시 호출 수를 통제하는 보호막 역할</li>
+                                </ul>
+                            </div>
+                            <div>
                                 <strong>단순 <code>@Async</code>만으로 충분할까?</strong>
                                 <ul>
                                     <li>백그라운드 처리만으로는 완료/실패 여부를 알기 어려움</li>
