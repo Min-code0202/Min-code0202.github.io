@@ -335,48 +335,76 @@
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>트러블슈팅: 멀티 BE 클러스터 cross-server 메시지 라우팅</h4>
+                        <h4>트러블슈팅: 멀티 BE 클러스터 메시지 동기화</h4>
                         <div class="problem-story compact-story">
                             <div class="problem-story-main">
                                 <span>문제</span>
-                                <h5>다른 서버에 연결된 유저에게 랭킹·결과 PRIVATE 메시지가 유실</h5>
-                                <p>로드밸런싱으로 백엔드를 여러 대 띄우면, STOMP의 <code>convertAndSendToUser</code>는 호출한 서버의 로컬 세션 레지스트리(<code>SimpUserRegistry</code>)만 조회합니다. 대상 유저가 다른 서버에 연결돼 있으면 개인 랭킹·결과 메시지가 전달되지 못하고 유실됐습니다.</p>
+                                <h5>로드밸런싱 환경에서 같은 방 유저가 다른 서버에 붙으면 게임이 둘로 분리</h5>
+                                <p>STOMP 기본 <code>SimpleBroker</code>는 in-memory라 백엔드 인스턴스 간 메시지를 공유하지 못합니다. 로드밸런싱으로 백엔드를 여러 대 띄우자 같은 방 유저가 서로 다른 서버에 연결돼, broadcast와 개인 메시지(랭킹·결과)가 서버 경계를 넘지 못하고 게임이 갈라졌습니다.</p>
                             </div>
                             <div class="problem-story-grid">
                                 <div>
-                                    <span>해결</span>
-                                    <p>PRIVATE 메시지를 <code>(userId, destination, payload)</code> envelope으로 포장해 Redis Pub/Sub <code>/internal/private</code> 채널에 broadcast</p>
+                                    <span>1차 시도</span>
+                                    <p>외부 STOMP 브로커(RabbitMQ relay)를 도입했으나, RabbitMQ STOMP는 destination에 <code>/</code>를 허용하지 않아(<code>.</code>만 routing-key separator) <code>/topic/room/&lt;UUID&gt;</code>가 "Invalid destination"으로 거부 → revert</p>
                                 </div>
                                 <div>
-                                    <span>보완</span>
-                                    <p>모든 서버가 envelope을 수신 → 각자 <code>convertAndSendToUser</code> 호출 → 유저 세션이 있는 서버만 실제 전송, 나머지는 no-op</p>
+                                    <span>해결</span>
+                                    <p>이미 게임 state에 쓰던 Redis Pub/Sub으로 전환 — BROADCAST는 <code>PatternTopic("/topic/room/*")</code>을 전 서버가 구독, PRIVATE는 envelope으로 fan-out해 세션이 있는 서버만 송신</p>
                                 </div>
                                 <div>
                                     <span>검증</span>
-                                    <p>멀티 인스턴스 배포 환경에서 서로 다른 서버에 연결된 유저 간 메시지 정상 수신 확인</p>
+                                    <p>멀티 인스턴스 배포 환경에서 서로 다른 서버에 연결된 유저 간 broadcast·개인 메시지 정상 동기화 확인</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
                     <section class="project-readme-section">
-                        <h4>설계 과정에서 고민한 부분</h4>
-                        <div class="decision-list">
-                            <div>
-                                <strong>왜 Redis Pub/Sub인가? (sticky session·외부 브로커 대비)</strong>
-                                <ul>
-                                    <li>sticky session은 재접속·방 단위 broadcast 흐름과 맞지 않음</li>
-                                    <li>이미 게임 state 저장에 Redis를 쓰고 있어 Pub/Sub 추가 인프라 비용 0</li>
-                                    <li>RabbitMQ·Kafka는 현재 규모에 운영 부담만 큼</li>
-                                </ul>
+                        <h4>트러블슈팅: 100명 동접 STOMP 채널 백프레셔</h4>
+                        <div class="problem-story compact-story">
+                            <div class="problem-story-main">
+                                <span>문제</span>
+                                <h5>100명 동시 접속에서 DISCONNECT 처리가 분 단위로 지연</h5>
+                                <p>STOMP 채널 스레드 풀이 기본값(CPU × 2)이라 2vCPU 서버에서는 4 스레드만 할당됐습니다. 100명 동접에 1.5초 주기 랭킹 broadcast가 겹치자 채널 큐에 backlog가 쌓이며 백프레셔가 발생했고, DISCONNECT 이벤트 처리가 분 단위로 밀렸습니다.</p>
                             </div>
-                            <div>
-                                <strong>PRIVATE를 모든 서버에 broadcast하면 낭비 아닌가?</strong>
-                                <ul>
-                                    <li>유저 세션 위치를 추적하는 레지스트리를 따로 두는 방법도 검토</li>
-                                    <li>envelope이 작아 네트워크 비용보다 추적 구조의 복잡도가 더 큼</li>
-                                    <li>단순성을 택하고, 세션 없는 서버는 no-op로 자연스럽게 걸러지도록 설계</li>
-                                </ul>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p>STOMP 채널 스레드 풀을 <code>core 16 / max 64 / queue 20,000</code>으로 확장, <code>queueCapacity</code>를 명시해 무한 큐로 인한 OOM도 방어</p>
+                                </div>
+                                <div>
+                                    <span>보완</span>
+                                    <p>동접 카운터를 STOMP 이벤트 대신 Tomcat transport layer hook에서 갱신 → 채널 backlog와 무관하게 실시간 정확</p>
+                                </div>
+                                <div>
+                                    <span>보강</span>
+                                    <p>STOMP heartbeat를 10초로 설정 — OS TCP keepalive(2시간)에 의존하지 않고 dead session을 빠르게 감지해 ghost session 누적 차단</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>트러블슈팅: 학습한 CNN을 브라우저(TF.js)로 이식</h4>
+                        <div class="problem-story compact-story">
+                            <div class="problem-story-main">
+                                <span>문제</span>
+                                <h5>Keras로 학습한 CNN을 TF.js로 변환했으나 브라우저에서 모델 로드 실패</h5>
+                                <p>그림 유사도 판정용 CNN을 직접 설계·학습한 뒤 TensorFlow.js로 변환해 브라우저에서 추론하려 했으나 <code>tf.loadLayersModel</code>이 실패했습니다. Keras 3.x와 TF.js 로더의 모델 포맷이 두 곳에서 어긋난 것이 원인이었습니다 — <code>InputLayer</code> 설정의 <code>batch_shape</code>(TF.js는 <code>batch_input_shape</code>를 기대), 그리고 가중치 이름의 <code>sequential_N/</code> prefix 불일치.</p>
+                            </div>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p><code>model.json</code>을 메모리에서 패치 — <code>batch_shape</code>를 <code>batch_input_shape</code>로 변환하고 가중치 이름의 prefix를 제거한 뒤 <code>tf.io.fromMemory</code>로 로드</p>
+                                </div>
+                                <div>
+                                    <span>보완</span>
+                                    <p>추론 정확도를 위해 캔버스 입력을 학습 데이터와 동일하게 전처리 — bounding box 추출 → 1.2배 padding 정사각 정렬 → 28×28 정규화</p>
+                                </div>
+                                <div>
+                                    <span>검증</span>
+                                    <p>패치 후 브라우저에서 모델 정상 로드 및 그림 유사도 추론 동작 확인</p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -558,7 +586,7 @@
                             </div>
                             <ul>
                                 <li>체감 지연이 아닌 k6 부하 테스트로 정량 비교</li>
-                                <li>동기 / 비동기 구조를 동일 조건(20VU)에서 측정</li>
+                                <li>동기/비동기 구조를 동일 조건(20VU)에서 측정</li>
                                 <li>AI 응답 대기로 점유되던 요청 스레드가 풀리며 처리량 확보</li>
                             </ul>
                         </div>
@@ -764,7 +792,7 @@
                             <div class="problem-story-main">
                                 <span>문제</span>
                                 <h5>WHERE/JOIN 컬럼에 함수가 적용되어 720만 건 데이터에서 Full Table Scan 발생</h5>
-                                <p>가격 검색에서는 거래 금액이 <code>"123,000"</code>처럼 쉼표 포함 <strong>VARCHAR</strong>로 저장되어 매번 <code>CAST</code>·<code>REPLACE</code> 함수가 적용되었습니다. 지역 JOIN에서는 법정동 코드 10자리에 <code>LEFT(dong_code, 5)</code> 함수가 적용되었습니다. 두 경우 모두 함수가 적용된 컬럼은 인덱스를 탈 수 없어, 720만 건 규모에서는 3-way JOIN과 함께 Full Table Scan이 발생했습니다.</p>
+                                <p>가격 검색에서는 거래 금액이 <code>"123,000"</code>처럼 쉼표 포함 <code>VARCHAR</code>로 저장되어 매번 <code>CAST</code>·<code>REPLACE</code> 함수가 적용되었습니다. 지역 JOIN에서는 법정동 코드 10자리에 <code>LEFT(dong_code, 5)</code> 함수가 적용되었습니다. 두 경우 모두 함수가 적용된 컬럼은 인덱스를 탈 수 없어, 720만 건 규모에서는 3-way JOIN과 함께 Full Table Scan이 발생했습니다.</p>
                             </div>
                             <div class="problem-story-grid">
                                 <div>
@@ -804,7 +832,7 @@
                                 <p>매회 발생하던 문자열 변환 연산 제거</p>
                             </div>
                             <div class="metric-card">
-                                <span class="metric-label">운영 쿼리 실측 (720만 건 · 서울 조회)</span>
+                                <span class="metric-label">운영 쿼리 실측(720만 건 · 서울 조회)</span>
                                 <strong><span>67초</span><em>→</em><span>2초</span></strong>
                                 <p>EXPLAIN ANALYZE 기준 3-way JOIN 종합 쿼리</p>
                             </div>
