@@ -294,6 +294,39 @@ a:hover {
     font-size: 1rem;
 }
 
+.about-points {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    max-width: 880px;
+    list-style: none;
+}
+
+.about-points li {
+    position: relative;
+    padding-left: 18px;
+    color: #3f4c48;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-points li::before {
+    content: "";
+    position: absolute;
+    top: 0.58em;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.about-points strong {
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
 .summary-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
