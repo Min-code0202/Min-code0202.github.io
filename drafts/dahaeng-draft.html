@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  다행(Dahaeng) 프로젝트 카드 — 초안 (DRAFT)
+  ============================================================
+  · 이 파일은 drafts/ 폴더에 있는 초안입니다.
+    → index.html(홈 화면)에서 링크하지 않으므로 메인 페이지에는 나타나지 않습니다.
+    → push하면 직접 URL(min-code0202.github.io/drafts/dahaeng-draft.html)로는 접근 가능합니다.
+
+  · 미리보기: 이 파일을 브라우저로 직접 열면(더블클릭) 실제 카드 모양을 확인할 수 있습니다.
+    (../css/style.css, ../assets/ 를 상대경로로 불러옴)
+
+  ────────────────────────────────────────────────────────────
+  [정식 프로젝트로 승격할 때 할 일 — 체크리스트]
+  1. 아래 <article class="project-card" id="p-dahaeng"> ... </article> 전체를
+     index.html 의 #projects 섹션 안에 붙여넣기
+     (시간순 정렬 시: 우주오락실 다음, DADAP 앞 → 다행이 Project 02)
+  2. 경로 수정: 이 파일의 ../assets/ → assets/ 로 변경 (index.html은 루트 기준)
+  3. project-kicker "Project 02" 와 다른 카드들(DADAP→03, ZipCheck→04) 번호 재정렬
+  4. 네비게이션 드롭다운(site-nav-submenu <ul>)에 항목 추가:
+     <li><a href="#p-dahaeng"><span class="nav-sub-tag">Project 02</span>다행</a></li>
+  5. 기타 프로젝트(#p-etc)의 minor-project-list에서 Dahaeng <li> 제거
+  6. 검토: 트러블슈팅 수치/표현, 캡션, GitHub 링크(SSAFY GitLab이라 비공개 — 현재 생략)
+
+  [내용 출처]
+  · README.md, backend/dahaeng 소스, git 커밋 로그(정재민 129커밋) 기반으로 작성
+  · 트러블슈팅은 실제 코드/커밋 근거: InterestAnalysisService 4단계 파이프라인,
+    커밋 "TravelTagValidator를 하드 리젝에서 근거 기반 재랭킹으로 전환"
+  ============================================================
+-->
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다행 (Dahaeng) — 프로젝트 카드 초안</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body id="top">
+    <main class="container">
+        <section class="panel" id="projects">
+            <div class="section-heading">
+                <span>DRAFT</span>
+                <h2>다행 프로젝트 카드 초안</h2>
+            </div>
+
+            <!-- ===== 여기부터 index.html로 옮길 영역 ===== -->
+            <article class="project-card" id="p-dahaeng">
+                <div class="project-readme">
+                    <div class="project-readme-head">
+                        <p class="project-kicker">Project 02</p>
+                        <div>
+                            <h3>다행</h3>
+                            <p>YouTube 취향 분석 기반 AI 여행 추천 서비스</p>
+                        </div>
+                        <div class="project-badges">
+                            <span>6인 팀</span>
+                            <span>Backend Developer</span>
+                            <span>2026.02 - 2026.03</span>
+                        </div>
+                    </div>
+
+                    <div class="project-readme-hero">
+                        <div class="project-readme-copy">
+                            <h4>프로젝트 소개</h4>
+                            <p>
+                                다행은 Google·YouTube 연동으로 사용자의 시청 취향을 분석해,
+                                취향에 맞는 여행 도시와 추천 근거를 제시하고 물가·항공권 비교까지
+                                한 흐름으로 잇는 AI 여행 추천 서비스입니다.
+                            </p>
+                            <div class="project-info-table">
+                                <div><strong>역할</strong><span>백엔드 담당 · YouTube 관심사 분석 파이프라인 · Spring AI 여행 태그 추론</span></div>
+                                <div><strong>인원</strong><span>FE 3 / BE 3</span></div>
+                                <div><strong>기간</strong><span>2026.02.19 - 2026.03.30</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="readme-gallery">
+                        <figure class="readme-shot">
+                            <img src="../assets/images/Dahaeng/youtube-connect.png" alt="다행 YouTube 연동 화면">
+                            <figcaption><strong>YouTube 연동</strong><span>좋아요·저장 영상 기반 취향 분석 동의</span></figcaption>
+                        </figure>
+                        <figure class="readme-shot">
+                            <img src="../assets/images/Dahaeng/interest-analysis.png" alt="다행 YouTube 취향 분석 화면">
+                            <figcaption><strong>취향 분석</strong><span>YouTube 키워드 분석과 추천 근거 시각화</span></figcaption>
+                        </figure>
+                        <figure class="readme-shot">
+                            <img src="../assets/images/Dahaeng/tag-select.png" alt="다행 취향 태그 화면">
+                            <figcaption><strong>취향 태그</strong><span>분석된 취향 태그 확인과 수동 보정</span></figcaption>
+                        </figure>
+                        <figure class="readme-shot">
+                            <img src="../assets/images/Dahaeng/recommend.png" alt="다행 AI 추천 결과 화면">
+                            <figcaption><strong>AI 추천</strong><span>취향 기반 추천 도시 탐색</span></figcaption>
+                        </figure>
+                    </div>
+
+                    <section class="project-readme-section">
+                        <h4>기술 스택</h4>
+                        <div class="stack-groups">
+                            <div>
+                                <strong>Backend</strong>
+                                <div class="stack-tags">
+                                    <span>Java 17</span>
+                                    <span>Spring Boot 3.5.11</span>
+                                    <span>Spring Security</span>
+                                    <span>Spring Data JPA</span>
+                                    <span>Spring AI</span>
+                                    <span>JJWT 0.12.6</span>
+                                    <span>SpringDoc OpenAPI 2.7.0</span>
+                                    <span>AWS SDK S3 2.25.53</span>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Database</strong>
+                                <div class="stack-tags">
+                                    <span>MySQL 8.0</span>
+                                    <span>MongoDB</span>
+                                    <span>Redis</span>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Frontend</strong>
+                                <div class="stack-tags">
+                                    <span>React 19</span>
+                                    <span>TypeScript 5</span>
+                                    <span>Vite 7</span>
+                                    <span>TanStack Query</span>
+                                    <span>Zustand</span>
+                                    <span>Tailwind CSS</span>
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Infra</strong>
+                                <div class="stack-tags">
+                                    <span>Docker</span>
+                                    <span>Docker Compose</span>
+                                    <span>Nginx</span>
+                                    <span>AWS EC2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>담당 업무</h4>
+                        <p class="section-note compact-note">
+                            다음 영역의 설계와 구현을 담당했습니다.
+                        </p>
+                        <ul class="scope-list">
+                            <li>
+                                <strong>YouTube 관심사 분석 파이프라인</strong>
+                                <span>영상 제목·키워드 수집 → 정제 · 정규화 · 토큰화 → 점수화 → AI용 상위 60개 키워드 선별</span>
+                            </li>
+                            <li>
+                                <strong>Spring AI 여행 태그 추론</strong>
+                                <span>Spring AI <code>ChatClient</code>로 키워드를 여행 태그(Vibe·Activity·Who·Climate)로 추론 · 추천 근거 함께 생성</span>
+                            </li>
+                            <li>
+                                <strong>근거 기반 태그 검증 · 재랭킹</strong>
+                                <span>태그별 증거 키워드 패턴으로 신뢰도 보정 후 카테고리별 상위 태그 선정</span>
+                            </li>
+                            <li>
+                                <strong>Google OAuth 인증</strong>
+                                <span>Google 소셜 로그인 · JWT Access/Refresh 토큰 발급·재발급</span>
+                            </li>
+                            <li>
+                                <strong>태그 저장 구조</strong>
+                                <span><code>tag_id</code> 기반 정규화 저장 · member_tag 연동 · 수동/YouTube 태그 중복 병합(upsert)</span>
+                            </li>
+                            <li>
+                                <strong>AWS S3 · 배포 인프라</strong>
+                                <span>도시·국가 이미지 S3 업로드 · Docker Compose · Nginx HTTPS 리버스 프록시 · AWS EC2 배포</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>트러블슈팅: 관심사 분석 파이프라인의 트랜잭션 경계 분리</h4>
+                        <div class="problem-story compact-story">
+                            <div class="problem-story-main">
+                                <span>문제</span>
+                                <h5>긴 분석 흐름을 한 트랜잭션으로 묶어 외부 AI 응답 대기 동안 DB 커넥션이 점유됨</h5>
+                                <p>관심사 분석은 YouTube 데이터 수집·정제 → AI 추론 → 검증 → 저장으로 이어지는 긴 작업입니다. 초기 구현은 이 흐름 전체(<code>analyze()</code>)를 하나의 <code>@Transactional</code>로 묶었고, 그 안에 외부 LLM 추론 호출이 포함돼 있었습니다. AI 추론이 수 초간 진행되는 동안 DB 커넥션이 반납되지 않아, 동시 분석 요청이 늘수록 커넥션 풀이 외부 AI 응답 대기에 묶여 고갈될 위험이 있었습니다.</p>
+                            </div>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p>분석 흐름을 4단계로 나누고 오케스트레이터(<code>InterestAnalysisService</code>)가 트랜잭션 경계를 직접 관리 — 키워드 추출(짧은 read-only 트랜잭션) → AI 추론(트랜잭션 없음) → 근거 검증(트랜잭션 없음) → 결과 저장(짧은 write 트랜잭션)</p>
+                                </div>
+                                <div>
+                                    <span>보완</span>
+                                    <p>DB를 실제로 접근하는 구간에만 트랜잭션을 두고, 외부 AI 호출 구간에서는 커넥션을 반납해 커넥션 풀이 LLM 지연에 묶이지 않도록 설계</p>
+                                </div>
+                                <div>
+                                    <span>검증</span>
+                                    <p>리팩토링 후 분석 파이프라인이 단계별 로그와 함께 정상 동작함을 확인 — AI 추론 구간이 트랜잭션 경계 밖으로 분리됨</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>트러블슈팅: AI 추론 태그의 근거 기반 검증과 재랭킹</h4>
+                        <div class="problem-story compact-story">
+                            <div class="problem-story-main">
+                                <span>문제</span>
+                                <h5>증거가 부족한 AI 태그를 무조건 제거(하드 리젝)해 추천 카테고리가 비는 문제</h5>
+                                <p>AI가 추론한 여행 태그를 그대로 신뢰하지 않고 사용자 키워드에 증거가 있는지 검증했습니다. 초기 검증은 증거 키워드가 없으면 태그를 통째로 제거하는 방식(하드 리젝)이었는데, AI가 맥락상 맞게 추론했더라도 표면 키워드가 잡히지 않으면 태그가 사라져, 특정 카테고리(Who·Climate)가 통째로 비는 경우가 생겼습니다.</p>
+                            </div>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p>제거 대신 증거 적합도(<code>evidenceFit</code>)를 점수에 반영하는 재랭킹으로 전환 — 증거가 약한 태그는 페널티를 받아 <code>score = 기존점수 × 0.8 + 증거적합도 × 0.2</code>로 재계산</p>
+                                </div>
+                                <div>
+                                    <span>보완</span>
+                                    <p>태그별 증거 키워드 패턴을 정규식 카탈로그로 정의하고, Who·Climate 카테고리는 더 강한 페널티를 적용해 카테고리별 상위 3개 태그를 선정</p>
+                                </div>
+                                <div>
+                                    <span>검증</span>
+                                    <p><code>TravelTagValidator</code> 단위 테스트로 페널티 적용 · 카테고리별 정렬 · 상위 선정 동작을 검증</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-readme-section">
+                        <h4>고찰</h4>
+                        <div class="reflection-note">
+                            <p>
+                                외부 AI를 서비스 흐름에 넣을 때, 응답 시간이 긴 호출은 트랜잭션·커넥션 같은 한정 자원과 분리해야 한다는 점을 체감한 작업이었습니다.
+                                또한 AI의 출력은 그대로 신뢰하기보다 사용자 데이터로 검증하되, 제거가 아니라 가중치로 보정하는 편이
+                                결과의 안정성과 설명력을 함께 지킨다는 것을 확인했습니다.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </article>
+            <!-- ===== 여기까지 index.html로 옮길 영역 ===== -->
+
+        </section>
+    </main>
+</body>
+
+</html>
