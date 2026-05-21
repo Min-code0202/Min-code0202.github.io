@@ -1306,6 +1306,13 @@ a:hover {
     color: var(--ink);
 }
 
+.minor-project-list .mp-meta {
+    display: block;
+    margin-top: -1px;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
 .minor-project-list .mp-desc {
     margin: 0;
     color: #3f4c48;
