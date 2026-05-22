@@ -1306,6 +1306,15 @@ a:hover {
     color: var(--ink);
 }
 
+.minor-project-list h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.minor-project-list h4 a:hover {
+    text-decoration: underline;
+}
+
 .minor-project-list .mp-meta {
     display: block;
     margin-top: -1px;
