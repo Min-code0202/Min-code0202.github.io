@@ -747,10 +747,6 @@ a:hover {
     min-width: 0;
 }
 
-.project-info-table div:has(a) {
-    grid-column: 1 / -1;
-}
-
 .project-info-table strong {
     color: var(--accent-dark);
     font-size: 0.86rem;
