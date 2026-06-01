@@ -331,6 +331,11 @@ a:hover {
     overflow-wrap: anywhere;
 }
 
+.blog-links {
+    display: grid;
+    gap: 4px;
+}
+
 .section-heading {
     display: flex;
     align-items: baseline;
