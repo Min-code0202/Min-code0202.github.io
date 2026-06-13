@@ -18,12 +18,12 @@
             <a class="site-nav-brand" href="#top">JM · Portfolio</a>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#career">Career</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li class="site-nav-dropdown">
-                    <a href="#projects">Projects</a>
+                    <a href="#project-overview">Projects</a>
                     <div class="site-nav-submenu">
                         <ul>
+                            <li><a href="#project-overview">프로젝트 요약</a></li>
                             <li><a href="#p-spacearcade"><span class="nav-sub-tag">Project 01</span>우주오락실</a></li>
                             <li><a href="#p-dadap"><span class="nav-sub-tag">Project 02</span>DADAP</a></li>
                             <li><a href="#p-zipcheck"><span class="nav-sub-tag">Project 03</span>ZipCheck</a></li>
@@ -35,210 +35,234 @@
         </div>
     </nav>
     <main class="container">
-        <section class="panel profile-panel">
-            <div class="profile-layout">
-                <div class="profile-mark" aria-label="정재민 프로필 이미지 대체 영역">
-                    <span>JM</span>
-                </div>
-                <div class="profile-info">
-                    <p class="section-kicker">Backend Developer Portfolio</p>
-                    <h1>정재민 <span>JaeMin Jung</span></h1>
-                    <p class="profile-quote">
-                        점은 기능을 완성하고, 선은 시스템을 완성한다. 선을 만드는 개발자 정재민입니다.
-                    </p>
-                    <div class="contact-grid">
-                        <div>
-                            <strong>Birth</strong>
-                            <span>2000.11.15</span>
-                        </div>
-                        <div>
-                            <strong>E-Mail</strong>
-                            <a href="mailto:jurumin0015@gmail.com">jurumin0015@gmail.com</a>
-                        </div>
-                        <div>
-                            <strong>GitHub</strong>
-                            <a href="https://github.com/Min-code0202" target="_blank"
-                                rel="noreferrer">github.com/Min-code0202</a>
-                        </div>
-                        <div>
-                            <strong>Blog</strong>
-                            <span class="blog-links">
-                                <a href="https://minspringboot.tistory.com/" target="_blank"
-                                    rel="noreferrer">개발지식 블로그 · minspringboot.tistory.com</a>
-                                <a href="https://minalgorithm.tistory.com/" target="_blank"
-                                    rel="noreferrer">CS·알고리즘 풀이 · minalgorithm.tistory.com</a>
+        <section class="panel intro-panel" id="about">
+            <h1 class="intro-title"><strong>요청 흐름</strong>과 <strong>데이터 정합성</strong>을 설계하는 백엔드 개발자</h1>
+            <div class="intro-layout">
+                <div class="intro-profile">
+                    <div class="profile-mark">
+                        <img src="assets/images/profile/jaemin.png" alt="정재민 프로필 사진">
+                    </div>
+                    <div class="intro-name">
+                        <strong>정재민</strong>
+                        <span>JaeMin Jung</span>
+                        <span>2000.11.15</span>
+                    </div>
+                    <div class="intro-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" focusable="false">
+                                    <rect x="4" y="6" width="16" height="12" rx="2"></rect>
+                                    <path d="m5 8 7 5 7-5"></path>
+                                </svg>
                             </span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:jurumin0015@gmail.com">jurumin0015@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" focusable="false">
+                                    <circle cx="12" cy="12" r="8"></circle>
+                                    <path d="M4 12h16M12 4c2 2.2 3 4.8 3 8s-1 5.8-3 8M12 4c-2 2.2-3 4.8-3 8s1 5.8 3 8"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>GitHub</strong>
+                                <a href="https://github.com/Min-code0202" target="_blank"
+                                    rel="noreferrer">github.com/Min-code0202</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" focusable="false">
+                                    <path d="M5 5h10a4 4 0 0 1 4 4v10H9a4 4 0 0 1-4-4V5Z"></path>
+                                    <path d="M9 9h6M9 13h5"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Blog</strong>
+                                <a href="https://minspringboot.tistory.com/" target="_blank"
+                                    rel="noreferrer">minspringboot.tistory.com</a>
+                                <a href="https://minalgorithm.tistory.com/" target="_blank"
+                                    rel="noreferrer">minalgorithm.tistory.com</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="panel" id="about">
-            <div class="section-heading">
-                <span>01</span>
-                <h2>About Me</h2>
-            </div>
-            <ul class="about-points">
-                <li>컴퓨터공학 전공 기반으로 <strong>백엔드 개발과 데이터베이스 설계</strong>를 다뤄왔습니다</li>
-                <li>기능 구현을 넘어 <strong>요청 흐름 · 데이터 정합성 · 예외 처리</strong>까지 고려합니다</li>
-                <li><strong>구조와 결정 근거를 기록하고 공유하는</strong> 협업 문화를 지향합니다</li>
-            </ul>
-            <div class="summary-grid">
-                <article>
-                    <h3>핵심 역량</h3>
-                    <ul class="focus-list">
-                        <li>REST API 설계와 계층형 백엔드 구조 구현</li>
-                        <li>Spring Security · JWT 기반 인증/인가 구현</li>
-                        <li>인덱스·쿼리 튜닝과 SQL Profiling 기반 조회 성능 개선</li>
-                        <li>비동기 처리로 외부 API 응답 병목 해소</li>
-                        <li>WebSocket 실시간 메시징과 멀티 인스턴스 메시지 동기화</li>
-                    </ul>
-                </article>
-                <article>
-                    <h3>성장 방향</h3>
-                    <p>측정으로 병목을 찾아 개선하고, 더 큰 규모와 분산 환경에서도 견고한 백엔드로 나아가는 개발자</p>
-                    <ul class="focus-list">
-                        <li>분산·멀티 인스턴스 환경의 동시성과 확장성 설계 깊이 더하기</li>
-                        <li>외부 AI·API 연동에서 지연·실패에 견디는 안정성 설계 익히기</li>
-                        <li>데이터 규모 증가를 가정한 성능 설계를 기본값으로 삼기</li>
-                        <li>트러블슈팅·측정 경험을 회고로 정리해 다음 설계의 근거로 잇기</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
+                <div class="intro-content">
+                    <p class="intro-summary">
+                        <strong>Spring 기반 API</strong>, <strong>인증/인가</strong>, <strong>실시간 통신</strong>, <strong>쿼리 튜닝</strong>을 중심으로
+                        안정적인 서비스 흐름을 설계해왔습니다.
+                    </p>
+                    <p class="intro-description">
+                        문제는 <strong>측정</strong>으로 확인하고, <strong>결정 근거</strong>와 <strong>트러블슈팅 과정</strong>을 기록해
+                        왜 그렇게 만들었는지 설명할 수 있는 개발자를 지향합니다.
+                    </p>
 
-        <section class="panel" id="career">
-            <div class="section-heading">
-                <span>02</span>
-                <h2>Career Snapshot</h2>
-            </div>
-            <div class="snapshot-grid">
-                <article>
-                    <h3>Education</h3>
-                    <ul class="snapshot-list">
-                        <li>
-                            <time>2019.03 - 2025.02</time>
-                            <strong>계명대학교 컴퓨터공학전공 졸업</strong>
-                            <span>학점 3.85/4.5, 전공 3.93/4.5</span>
-                        </li>
-                        <li>
-                            <time>2017.03 - 2019.02</time>
-                            <strong>대영고등학교 졸업</strong>
-                        </li>
-                    </ul>
-                </article>
-                <article>
-                    <h3>Training</h3>
-                    <ul class="snapshot-list">
-                        <li>
-                            <time>2025.07 - 현재</time>
-                            <strong>삼성 청년 SW·AI 아카데미(SSAFY)</strong>
-                            <span>알고리즘 문제 해결 및 Spring 기반 팀 프로젝트 수행</span>
-                        </li>
-                    </ul>
-                </article>
-                <article>
-                    <h3>Certifications</h3>
-                    <ul class="snapshot-list compact">
-                        <li><time>2025.04.05</time><strong>TOEIC Speaking IH(150)</strong></li>
-                        <li><time>2025.03.21</time><strong>SQLD</strong></li>
-                        <li><time>2024.06.18</time><strong>정보처리기사</strong></li>
-                    </ul>
-                </article>
-                <article>
-                    <h3>Awards</h3>
-                    <ul class="snapshot-list">
-                        <li>
-                            <time>2026.05.29</time>
-                            <strong>삼성 청년 SW·AI 아카데미 자율 프로젝트 우수상 - 우주오락실</strong>
-                            <span>멀티플레이 실시간 게임과 소셜 기능을 결합한 웹 게임 서비스</span>
-                        </li>
-                        <li>
-                            <time>2026.02.09</time>
-                            <strong>삼성 청년 SW·AI 아카데미 공통 프로젝트 우수상 - DADAP</strong>
-                            <span>AI 기반 기술 면접 연습과 포트폴리오 분석을 제공하는 커리어 성장 서비스</span>
-                        </li>
-                    </ul>
-                </article>
+                    <div class="intro-history">
+                        <section>
+                            <h2>Education</h2>
+                            <ul>
+                                <li><time>2025.07 - 현재</time><span>삼성 청년 SW·AI 아카데미(SSAFY)</span></li>
+                                <li>
+                                    <time>2019.03 - 2025.02</time>
+                                    <span>계명대학교 컴퓨터공학전공 졸업 <em>학점 3.85/4.5 · 전공 3.93/4.5</em></span>
+                                </li>
+                                <li><time>2017.03 - 2019.02</time><span>대영고등학교 졸업</span></li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Awards</h2>
+                            <ul>
+                                <li>
+                                    <time>2026.05</time>
+                                    <span>SSAFY 자율 프로젝트 우수상 - 우주오락실 <em>최대 100명 동시 참여 실시간 멀티플레이 미니게임 플랫폼 · 수여기관: 삼성청년SW·AI아카데미</em></span>
+                                </li>
+                                <li>
+                                    <time>2026.02</time>
+                                    <span>SSAFY 공통 프로젝트 우수상 - DADAP <em>AI 기반 기술 면접 연습 및 포트폴리오 분석 서비스 · 수여기관: 삼성청년SW·AI아카데미</em></span>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Certification</h2>
+                            <ul class="certification-list">
+                                <li><time>2025.04</time><span>TOEIC Speaking IH(150) <em>발급기관: 한국TOEIC위원회</em></span></li>
+                                <li><time>2025.03</time><span>SQLD <em>발급기관: 한국데이터산업진흥원</em></span></li>
+                                <li><time>2024.06</time><span>정보처리기사 <em>발급기관: 한국산업인력공단</em></span></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="panel" id="skills">
-            <div class="section-heading">
-                <span>03</span>
-                <h2>Skills and Tools</h2>
+            <div class="skill-board">
+                <article class="skill-category">
+                    <h3>Language</h3>
+                    <ul class="skill-meter-list">
+                        <li><span><strong>Java</strong><em>객체지향 설계를 기반으로 비즈니스 로직과 도메인 모델을 구현했습니다.</em></span><span class="skill-meter" aria-label="4 out of 5"><i></i><i></i><i></i><i></i><i class="empty"></i></span></li>
+                        <li><span><strong>Python</strong><em>데이터 전처리 및 반복 작업 자동화를 위한 스크립트를 작성했습니다.</em></span><span class="skill-meter" aria-label="2 out of 5"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span></li>
+                    </ul>
+                </article>
+
+                <article class="skill-category">
+                    <h3>Backend</h3>
+                    <ul class="skill-meter-list">
+                        <li><span><strong>Spring Boot</strong><em>인증·인가, 데이터 처리, 실시간 통신을 포함한 백엔드 서비스를 설계·구현했습니다.</em></span><span class="skill-meter" aria-label="4 out of 5"><i></i><i></i><i></i><i></i><i class="empty"></i></span></li>
+                        <li><span><strong>WebSocket / STOMP</strong><em>WebSocket/STOMP와 Redis Pub/Sub을 활용해 실시간 통신 기능을 구현했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
+                    </ul>
+                </article>
+
+                <article class="skill-category">
+                    <h3>Database</h3>
+                    <ul class="skill-meter-list">
+                        <li><span><strong>MySQL</strong><em>실행계획 분석과 인덱스 최적화로 720만 건 데이터 조회 성능을 개선했습니다.</em></span><span class="skill-meter" aria-label="4 out of 5"><i></i><i></i><i></i><i></i><i class="empty"></i></span></li>
+                        <li><span><strong>Redis</strong><em>Pub/Sub과 TTL을 활용해 실시간 메시지 동기화 기능을 구현했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
+                    </ul>
+                </article>
+
+                <article class="skill-category">
+                    <h3>Infra</h3>
+                    <ul class="skill-meter-list">
+                        <li><span><strong>Docker / Compose</strong><em>애플리케이션과 데이터베이스 실행 환경을 컨테이너 기반으로 구성했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
+                        <li><span><strong>Nginx</strong><em>리버스 프록시를 적용해 정적 리소스와 API 요청을 분리했습니다.</em></span><span class="skill-meter" aria-label="2 out of 5"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span></li>
+                        <li><span><strong>AWS EC2 / S3</strong><em>EC2 배포와 S3 연동을 통해 서비스를 운영·관리했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
+                    </ul>
+                </article>
+
+                <article class="skill-category">
+                    <h3>AI / External API</h3>
+                    <ul class="skill-meter-list">
+                        <li><span><strong>AI Integration</strong><em>프롬프트 설계, RAG 구성 및 AI 모델 학습을 수행했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
+                        <li><span><strong>WebClient</strong><em>외부 API 및 AI 서버 연동을 위한 요청·응답 처리 로직을 구현했습니다.</em></span><span class="skill-meter" aria-label="2 out of 5"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span></li>
+                    </ul>
+                </article>
+
+                <article class="skill-category">
+                    <h3>Tools</h3>
+                    <ul class="skill-meter-list tool-list">
+                        <li><span><strong>Git / GitHub</strong><em>Git Flow 기반 브랜치 전략과 PR·코드리뷰 중심 협업을 수행했습니다.</em></span></li>
+                        <li><span><strong>Jira</strong><em>이슈와 일정 관리를 통해 스프린트 기반 개발 프로세스를 운영했습니다.</em></span></li>
+                        <li><span><strong>Notion</strong><em>설계 과정과 트러블슈팅 내용을 문서화하여 지식을 공유했습니다.</em></span></li>
+                    </ul>
+                </article>
+
+                <aside class="skill-legend">
+                    <div><span class="skill-meter"><i></i><i></i><i></i><i></i><i></i></span><p>아키텍처 설계부터 성능 개선까지 주도적으로 수행할 수 있는 수준</p></div>
+                    <div><span class="skill-meter"><i></i><i></i><i></i><i></i><i class="empty"></i></span><p>프로젝트 설계와 핵심 기능 구현을 주도할 수 있는 수준</p></div>
+                    <div><span class="skill-meter"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span><p>기능 구현과 문제 해결을 독립적으로 수행할 수 있는 수준</p></div>
+                    <div><span class="skill-meter"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span><p>기본 기능 구현과 유지보수가 가능한 수준</p></div>
+                    <div><span class="skill-meter"><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span><p>기본 개념을 이해하고 활용할 수 있는 수준</p></div>
+                </aside>
             </div>
-            <p class="section-note">
-                프로젝트에서 다뤄본 구조와 문제 해결 경험을 기준으로 정리했습니다.
-                기술 스택보다 요청 흐름, 데이터 정합성, 배포 흐름에서 어떤 고민을 했는지에 초점을 맞췄습니다.
-            </p>
-            <div class="skill-scan-list">
-                <article class="skill-scan-card">
-                    <div class="skill-scan-head">
-                        <h3>Backend</h3>
-                        <p>Java · Spring&nbsp;Boot · Spring&nbsp;Security · Spring&nbsp;Data&nbsp;JPA · MyBatis · JWT · WebSocket(STOMP)</p>
-                    </div>
-                    <ul class="experience-points">
-                        <li><strong>계층 구조</strong> <code>Controller</code>·<code>Service</code>·<code>Repository</code> 계층 분리로 <code>REST API</code> 요청 처리 책임을 명확히 구분</li>
-                        <li><strong>인증 · 인가</strong> <code>Spring Security</code> 인증 필터와 <code>JWT</code> Access/Refresh 이중 토큰 발급·재발급 구현</li>
-                        <li><strong>데이터 정합성</strong> <code>@Transactional</code> 경계를 고려한 도메인 로직 구성으로 일관성 확보</li>
-                        <li><strong>비동기 처리</strong> <code>@Async</code> 기반 작업 분리와 상태 관리로 외부 API 응답 대기 병목 완화</li>
-                        <li><strong>실시간 통신</strong> <code>WebSocket(STOMP)</code> 양방향 메시징과 <code>Redis Pub/Sub</code> 기반 멀티 인스턴스 메시지 동기화</li>
-                        <li><strong>ORM · 매퍼</strong> <code>Spring Data JPA</code>와 <code>MyBatis</code>를 프로젝트 특성에 맞게 선택·활용</li>
-                    </ul>
+        </section>
+
+        <section class="panel project-overview-panel" id="project-overview">
+            <div class="project-overview-head">
+                <p class="section-kicker">Projects</p>
+                <h2>프로젝트</h2>
+                <p>최신순으로 진행한 주요 프로젝트와 담당 역할을 정리했습니다.</p>
+            </div>
+
+            <div class="project-timeline">
+                <article class="timeline-item">
+                    <time>2026.04 - 2026.05 · 8주</time>
+                    <h3>우주오락실 <span class="award-badge" aria-label="수상 프로젝트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v3h3v2a5 5 0 0 1-4 4.9A5.5 5.5 0 0 1 13 16.7V19h3v2H8v-2h3v-2.3a5.5 5.5 0 0 1-2-2.8A5 5 0 0 1 5 9V7h3V4Zm8 5V7H8v2a4 4 0 0 0 8 0Zm2 .8A3 3 0 0 0 21 7h-3v2c0 .3 0 .5-.1.8ZM6.1 9.8C6 9.5 6 9.3 6 9V7H3a3 3 0 0 0 3.1 2.8Z"/></svg>수상</span></h3>
+                    <p>최대 100명 동시 참여 실시간 멀티플레이 미니게임 플랫폼</p>
+                    <dl>
+                        <div><dt>인원</dt><dd>6명</dd></div>
+                        <div class="role-entry"><dt>역할</dt><dd><strong>Backend</strong><span>Redis 실시간 메시징, Quick Draw CNN 모델 학습</span></dd></div>
+                        <div><dt>기술</dt><dd>Spring Boot · WebSocket/STOMP · Redis · MySQL · Docker · Nginx</dd></div>
+                    </dl>
                 </article>
 
-                <article class="skill-scan-card">
-                    <div class="skill-scan-head">
-                        <h3>Database</h3>
-                        <p>MySQL · Redis</p>
-                    </div>
-                    <ul class="experience-points">
-                        <li><strong>쿼리 최적화</strong> <code>EXPLAIN</code>으로 실행 계획을 분석해 인덱스가 동작하는 <code>SARGable</code> 쿼리로 개선</li>
-                        <li><strong>인덱스 설계</strong> <code>Generated Column</code>으로 함수 연산을 제거하고 조회 패턴 기반 <code>복합 인덱스</code> 구성</li>
-                        <li><strong>관계형 모델링</strong> 정규화와 조인 비용을 고려한 테이블 설계</li>
-                        <li><strong>실시간 상태 저장</strong> 매치·세션·누적 점수 등 휘발성 게임 상태를 <code>Redis</code>에 저장하고 TTL로 생명주기 관리</li>
-                    </ul>
+                <article class="timeline-item">
+                    <time>2026.02 - 2026.03 · 7주</time>
+                    <h3>Dahaeng</h3>
+                    <p>YouTube 시청 취향 기반 AI 여행 도시 추천 서비스</p>
+                    <dl>
+                        <div><dt>인원</dt><dd>6명</dd></div>
+                        <div class="role-entry"><dt>역할</dt><dd><strong>Backend · Infra</strong><span>AI 추천 파이프라인, OAuth, 배포 환경 구성</span></dd></div>
+                        <div><dt>기술</dt><dd>Spring Boot · Spring AI · OAuth2 · MySQL · MongoDB · Redis</dd></div>
+                    </dl>
                 </article>
 
-                <article class="skill-scan-card">
-                    <div class="skill-scan-head">
-                        <h3>Infra & DevOps</h3>
-                        <p>Docker · Docker&nbsp;Compose · Nginx · AWS&nbsp;EC2 · Prometheus · Grafana</p>
-                    </div>
-                    <ul class="experience-points">
-                        <li><strong>컨테이너 구성</strong> <code>Docker Compose</code>로 8개 서비스를 묶은 통합 실행 환경 구성</li>
-                        <li><strong>리버스 프록시</strong> <code>Nginx</code>로 TLS 종료와 로드밸런싱, 정적·API 요청 라우팅 분리</li>
-                        <li><strong>배포</strong> <code>AWS EC2</code> 멀티 인스턴스 배포 환경 구성</li>
-                        <li><strong>모니터링</strong> <code>Prometheus</code>·<code>Grafana</code>·<code>node-exporter</code>로 메트릭 수집과 시각화</li>
-                    </ul>
+                <article class="timeline-item">
+                    <time>2026.01 - 2026.02 · 6주</time>
+                    <h3>DADAP <span class="award-badge" aria-label="수상 프로젝트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v3h3v2a5 5 0 0 1-4 4.9A5.5 5.5 0 0 1 13 16.7V19h3v2H8v-2h3v-2.3a5.5 5.5 0 0 1-2-2.8A5 5 0 0 1 5 9V7h3V4Zm8 5V7H8v2a4 4 0 0 0 8 0Zm2 .8A3 3 0 0 0 21 7h-3v2c0 .3 0 .5-.1.8ZM6.1 9.8C6 9.5 6 9.3 6 9V7H3a3 3 0 0 0 3.1 2.8Z"/></svg>수상</span></h3>
+                    <p>AI 기반 기술 면접 연습 및 포트폴리오 분석 서비스</p>
+                    <dl>
+                        <div><dt>인원</dt><dd>6명</dd></div>
+                        <div class="role-entry"><dt>역할</dt><dd><strong>Backend</strong><span>AI 서버 연동, 비동기 분석 상태 관리</span></dd></div>
+                        <div><dt>기술</dt><dd>Spring Boot · WebClient · JWT · MySQL · Docker</dd></div>
+                    </dl>
                 </article>
 
-                <article class="skill-scan-card">
-                    <div class="skill-scan-head">
-                        <h3>Tools & Collaboration</h3>
-                        <p>Git · GitHub · Notion · Jira</p>
-                    </div>
-                    <ul class="experience-points">
-                        <li><strong>브랜치 전략</strong> 기능 단위 <code>Git</code> 브랜치로 작업을 분리해 병합 충돌 최소화</li>
-                        <li><strong>코드 리뷰</strong> <code>PR</code> 단위로 변경 범위를 공유하고 리뷰로 검토</li>
-                        <li><strong>이슈 관리</strong> <code>Jira</code>로 작업을 분배하고 진척도 추적</li>
-                        <li><strong>문서화</strong> <code>Notion</code>에 구조와 의사결정 근거 기록</li>
-                    </ul>
+                <article class="timeline-item">
+                    <time>2025.11 - 2025.12 · 6주</time>
+                    <h3>ZipCheck</h3>
+                    <p>지도 기반 부동산 매물 · 감정 스티커 커뮤니티</p>
+                    <dl>
+                        <div><dt>인원</dt><dd>2명</dd></div>
+                        <div class="role-entry"><dt>역할</dt><dd><strong>Backend</strong><span>DB 설계, 쿼리 튜닝, 지도/커뮤니티 기능</span></dd></div>
+                        <div><dt>기술</dt><dd>Spring Boot · MyBatis · MySQL · AWS S3 · Vue</dd></div>
+                    </dl>
                 </article>
+
             </div>
         </section>
 
         <section class="panel" id="projects">
-            <div class="section-heading">
-                <span>04</span>
-                <h2>Projects</h2>
-            </div>
-            <article class="project-card" id="p-spacearcade">
-                <div class="project-readme">
+            <article class="project-card project-slide" id="p-spacearcade">
+                <div class="project-readme project-slide-grid">
                     <div class="project-readme-head">
-                        <p class="project-kicker">Project 01</p>
+                        <p class="project-kicker">Project 01 · 1/3</p>
                         <div>
                             <h3>우주오락실</h3>
                             <p>최대 100명 동시 참여 실시간 멀티플레이 미니게임 파티 플랫폼</p>
@@ -246,678 +270,99 @@
                         <div class="project-badges">
                             <span class="award-badge">🏆 수상 프로젝트</span>
                             <span>6인 팀</span>
-                            <span>Backend Developer</span>
-                            <span>2026.04 - 2026.05</span>
+                            <span>Backend</span>
+                            <span>2026.04 - 2026.05 · 8주</span>
                         </div>
                     </div>
-
                     <div class="project-readme-hero">
                         <div class="project-readme-copy">
                             <h4>프로젝트 소개</h4>
-                            <p>
-                                우주오락실은 차원을 넘나들며 최대 100명이 동시에 겨루는 실시간 멀티플레이 미니게임 파티 플랫폼입니다.
-                                매 라운드 무작위 미니게임으로 워프하고, 누적 점수로 최종 우승자를 가립니다.
-                            </p>
+                            <p>우주오락실은 매 라운드 무작위 미니게임으로 이동해 최대 100명이 동시에 경쟁하고, 누적 점수로 최종 우승자를 가리는 실시간 멀티플레이 플랫폼입니다.</p>
                             <div class="project-info-table">
-                                <div><strong>역할</strong><span>백엔드 · Redis 기반 실시간 메시징 · 미니게임 3종</span></div>
+                                <div><strong>역할</strong><span>Backend</span></div>
                                 <div><strong>인원</strong><span>6명</span></div>
                                 <div><strong>기간</strong><span>2026.04.06 - 2026.05.21</span></div>
-                                <div><strong>수상</strong><span>삼성 청년 SW·AI 아카데미 자율 프로젝트 우수상</span></div>
+                                <div><strong>수상</strong><span>SSAFY 자율 프로젝트 우수상</span></div>
+                                <div><strong>담당</strong><span>Redis 실시간 메시징, 미니게임 서버 로직, Quick Draw CNN 모델 학습</span></div>
                                 <div><strong>GitHub</strong><span><a href="https://github.com/Min-code0202/space-arcade" target="_blank" rel="noreferrer">github.com/Min-code0202/space-arcade</a></span></div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="readme-gallery">
-                        <figure class="readme-shot">
-                            <img src="assets/images/SpaceArcade/login.png" alt="우주오락실 홈 화면">
-                            <figcaption><strong>홈</strong><span>닉네임 입력 즉시 게스트 세션 발급</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/SpaceArcade/room-list.png" alt="우주오락실 정거장 목록 화면">
-                            <figcaption><strong>정거장 목록</strong><span>참여할 방을 탐색하는 목록 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/SpaceArcade/waiting-room.png" alt="우주오락실 대기실 화면">
-                            <figcaption><strong>대기실</strong><span>게임 시작 전 참가자가 모이는 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/SpaceArcade/result.png" alt="우주오락실 최종 결과 화면">
-                            <figcaption><strong>최종 결과</strong><span>차원 종료 후 누적 점수 순위</span></figcaption>
-                        </figure>
+                    <div class="readme-gallery slide-gallery">
+                        <figure class="readme-shot"><img src="assets/images/SpaceArcade/login.png" alt="우주오락실 홈 화면"><figcaption><strong>홈</strong><span>게스트 세션 진입</span></figcaption></figure>
+                        <figure class="readme-shot"><img src="assets/images/SpaceArcade/room-list.png" alt="우주오락실 정거장 목록 화면"><figcaption><strong>정거장 목록</strong><span>참여 방 탐색</span></figcaption></figure>
+                        <figure class="readme-shot"><img src="assets/images/SpaceArcade/waiting-room.png" alt="우주오락실 대기실 화면"><figcaption><strong>대기실</strong><span>게임 시작 전 참가자 대기</span></figcaption></figure>
+                        <figure class="readme-shot"><img src="assets/images/SpaceArcade/result.png" alt="우주오락실 최종 결과 화면"><figcaption><strong>최종 결과</strong><span>누적 점수 순위</span></figcaption></figure>
                     </div>
-
-                    <section class="project-readme-section">
-                        <h4>기술 스택</h4>
-                        <div class="stack-groups">
-                            <div>
-                                <strong>Backend</strong>
-                                <div class="stack-tags">
-                                    <span>Java 17</span>
-                                    <span>Spring Boot 3.5.13</span>
-                                    <span>Spring Security</span>
-                                    <span>Spring Data JPA</span>
-                                    <span>WebSocket(STOMP)</span>
-                                    <span>JJWT 0.13.0</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Realtime · DB</strong>
-                                <div class="stack-tags">
-                                    <span>Redis 7</span>
-                                    <span>MySQL 8.0</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Frontend</strong>
-                                <div class="stack-tags">
-                                    <span>React 19</span>
-                                    <span>TypeScript</span>
-                                    <span>Vite</span>
-                                    <span>Zustand</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Infra · Monitoring</strong>
-                                <div class="stack-tags">
-                                    <span>Docker Compose</span>
-                                    <span>Nginx</span>
-                                    <span>Prometheus</span>
-                                    <span>Grafana</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>담당 업무</h4>
-                        <p class="section-note compact-note">
-                            백엔드 · 인프라 영역에서 다음을 담당했습니다.
-                        </p>
-                        <ul class="scope-list">
-                            <li>
-                                <strong>실시간 메시징 백엔드</strong>
-                                <span>STOMP + Redis Pub/Sub 기반 멀티 BE cross-server 메시지 라우팅</span>
-                            </li>
-                            <li>
-                                <strong>미니게임 3종</strong>
-                                <span>그림 유사도 · 풍선 터뜨리기 · 거울 타자 — 핸들러 · 세션 · Redis state 구현</span>
-                            </li>
-                            <li>
-                                <strong>배포 인프라</strong>
-                                <span>Docker Compose 8개 서비스 · Nginx TLS 리버스 프록시 구성</span>
-                            </li>
-                            <li>
-                                <strong>모니터링</strong>
-                                <span>Prometheus · Grafana · node-exporter 메트릭 수집과 시각화</span>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>아키텍처</h4>
-                        <div class="architecture-image-wrap">
-                            <img class="architecture-image" src="assets/images/SpaceArcade/architecture.png" alt="우주오락실 시스템 아키텍처">
-                        </div>
-                        <p class="architecture-copy">
-                            Nginx 로드밸런서가 100명 이상의 트래픽을 여러 백엔드 인스턴스로 분산하고, 인스턴스 간 실시간 메시지는 Redis Pub/Sub으로 동기화하는 구조입니다.
-                        </p>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>트러블슈팅: 멀티 BE 클러스터 메시지 동기화</h4>
-                        <div class="problem-story compact-story">
-                            <div class="problem-story-main">
-                                <span>문제</span>
-                                <h5>로드밸런싱 환경에서 같은 방 유저가 다른 서버에 붙으면 게임이 둘로 분리</h5>
-                                <p>STOMP 기본 <code>SimpleBroker</code>는 in-memory라 백엔드 인스턴스 간 메시지를 공유하지 못합니다. 로드밸런싱으로 백엔드를 여러 대 띄우자 같은 방 유저가 서로 다른 서버에 연결돼, broadcast와 개인 메시지(랭킹·결과)가 서버 경계를 넘지 못하고 게임이 갈라졌습니다.</p>
-                            </div>
-                            <div class="problem-story-grid">
-                                <div>
-                                    <span>1차 시도</span>
-                                    <p>외부 STOMP 브로커(RabbitMQ relay)를 도입했으나, RabbitMQ STOMP는 destination에 <code>/</code>를 허용하지 않아(<code>.</code>만 routing-key separator) <code>/topic/room/&lt;UUID&gt;</code>가 "Invalid destination"으로 거부 → revert</p>
-                                </div>
-                                <div>
-                                    <span>해결</span>
-                                    <p>이미 게임 state에 쓰던 Redis Pub/Sub으로 전환 — BROADCAST는 <code>PatternTopic("/topic/room/*")</code>을 전 서버가 구독, PRIVATE는 envelope으로 fan-out해 세션이 있는 서버만 송신</p>
-                                </div>
-                                <div>
-                                    <span>검증</span>
-                                    <p>멀티 인스턴스 배포 환경에서 서로 다른 서버에 연결된 유저 간 broadcast·개인 메시지 정상 동기화 확인</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>트러블슈팅: 100명 동접 STOMP 채널 백프레셔</h4>
-                        <div class="problem-story compact-story">
-                            <div class="problem-story-main">
-                                <span>문제</span>
-                                <h5>100명 동시 접속에서 DISCONNECT 처리가 분 단위로 지연</h5>
-                                <p>STOMP 채널 스레드 풀이 기본값(CPU × 2)이라 2vCPU 서버에서는 4 스레드만 할당됐습니다. 100명 동접에 1.5초 주기 랭킹 broadcast가 겹치자 채널 큐에 backlog가 쌓이며 백프레셔가 발생했고, DISCONNECT 이벤트 처리가 분 단위로 밀렸습니다.</p>
-                            </div>
-                            <div class="problem-story-grid">
-                                <div>
-                                    <span>해결</span>
-                                    <p>STOMP 채널 스레드 풀을 <code>core 16 / max 64 / queue 20,000</code>으로 확장, <code>queueCapacity</code>를 명시해 무한 큐로 인한 OOM도 방어</p>
-                                </div>
-                                <div>
-                                    <span>보완</span>
-                                    <p>동접 카운터를 STOMP 이벤트 대신 Tomcat transport layer hook에서 갱신 → 채널 backlog와 무관하게 실시간 정확</p>
-                                </div>
-                                <div>
-                                    <span>보강</span>
-                                    <p>STOMP heartbeat를 10초로 설정 — OS TCP keepalive(2시간)에 의존하지 않고 dead session을 빠르게 감지해 ghost session 누적 차단</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>트러블슈팅: 학습한 CNN을 브라우저(TF.js)로 이식</h4>
-                        <div class="problem-story compact-story">
-                            <div class="problem-story-main">
-                                <span>문제</span>
-                                <h5>Keras로 학습한 CNN을 TF.js로 변환했으나 브라우저에서 모델 로드 실패</h5>
-                                <p>그림 유사도 판정용 CNN을 직접 설계·학습한 뒤 TensorFlow.js로 변환해 브라우저에서 추론하려 했으나 <code>tf.loadLayersModel</code>이 실패했습니다. Keras 3.x와 TF.js 로더의 모델 포맷이 두 곳에서 어긋난 것이 원인이었습니다 — <code>InputLayer</code> 설정의 <code>batch_shape</code>(TF.js는 <code>batch_input_shape</code>를 기대), 그리고 가중치 이름의 <code>sequential_N/</code> prefix 불일치.</p>
-                            </div>
-                            <div class="problem-story-grid">
-                                <div>
-                                    <span>해결</span>
-                                    <p><code>model.json</code>을 메모리에서 패치 — <code>batch_shape</code>를 <code>batch_input_shape</code>로 변환하고 가중치 이름의 prefix를 제거한 뒤 <code>tf.io.fromMemory</code>로 로드</p>
-                                </div>
-                                <div>
-                                    <span>보완</span>
-                                    <p>추론 정확도를 위해 캔버스 입력을 학습 데이터와 동일하게 전처리 — bounding box 추출 → 1.2배 padding 정사각 정렬 → 28×28 정규화</p>
-                                </div>
-                                <div>
-                                    <span>검증</span>
-                                    <p>패치 후 브라우저에서 모델 정상 로드 및 그림 유사도 추론 동작 확인</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>고찰</h4>
-                        <div class="reflection-note">
-                            <p>
-                                단일 서버를 전제로 동작하던 WebSocket 메시징이 멀티 인스턴스 환경에서는 그대로 깨진다는 것을 체감한 작업이었습니다.
-                                <code>convertAndSendToUser</code> 같은 추상화가 내부적으로 무엇을 가정하는지 이해해야 분산 환경의 함정을 피할 수 있다는 점,
-                                그리고 새 인프라를 더하기 전에 이미 가진 자원으로 풀 수 있는지 먼저 따지는 판단을 배웠습니다.
-                            </p>
-                        </div>
-                    </section>
                 </div>
             </article>
 
-            <article class="project-card" id="p-dadap">
-                <div class="project-readme">
-                    <div class="project-readme-head">
-                        <p class="project-kicker">Project 02</p>
+            <article class="project-card project-slide">
+                <div class="project-readme project-slide-grid">
+                    <div class="project-readme-head"><p class="project-kicker">Project 01 · 2/3</p><div><h3>우주오락실 · 구조와 담당 업무</h3><p>멀티 인스턴스 실시간 메시징과 게임 상태 관리를 중심으로 구현했습니다.</p></div></div>
+                    <section class="project-readme-section slide-two-column">
                         <div>
-                            <h3>DADAP</h3>
-                            <p>Whisper·GPT 기반 AI 면접 분석 · 피드백 서비스</p>
-                        </div>
-                        <div class="project-badges">
-                            <span class="award-badge">🏆 수상 프로젝트</span>
-                            <span>6인 팀</span>
-                            <span>Backend Developer</span>
-                            <span>2026.01 - 2026.02</span>
-                        </div>
-                    </div>
-
-                    <div class="project-readme-hero">
-                        <div class="project-readme-copy">
-                            <h4>프로젝트 소개</h4>
-                            <p>
-                                DADAP은 CS 면접과 포트폴리오 면접을 반복 연습하고, 답변 분석 결과와 피드백, 꼬리질문으로 다시 복기할 수 있도록 만든 AI 면접 분석 플랫폼입니다.
-                            </p>
-                            <div class="project-info-table">
-                                <div><strong>역할</strong><span>백엔드 담당 · 비디오(비언어 지표) 분석 비동기 처리 및 성능 검증</span></div>
-                                <div><strong>인원</strong><span>FE 3 / BE 3</span></div>
-                                <div><strong>기간</strong><span>2026.01.06 - 2026.02.13</span></div>
-                                <div><strong>수상</strong><span>삼성 청년 SW·AI 아카데미 공통 프로젝트 우수상</span></div>
-                                <div><strong>GitHub</strong><span><a href="https://github.com/Min-code0202/Dadap-public" target="_blank" rel="noreferrer">github.com/Min-code0202/Dadap-public</a></span></div>
+                            <h4>기술 스택</h4>
+                            <div class="stack-groups compact-stack">
+                                <div><strong>Backend</strong><div class="stack-tags"><span>Java 17</span><span>Spring Boot</span><span>Spring Security</span><span>JPA</span><span>WebSocket/STOMP</span></div></div>
+                                <div><strong>Realtime · DB</strong><div class="stack-tags"><span>Redis Pub/Sub</span><span>MySQL</span></div></div>
+                                <div><strong>Infra</strong><div class="stack-tags"><span>Docker Compose</span><span>Nginx</span><span>Prometheus</span><span>Grafana</span></div></div>
+                                <div><strong>AI</strong><div class="stack-tags"><span>TensorFlow</span><span>Quick Draw</span><span>TensorFlow.js</span></div></div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="readme-gallery">
-                        <figure class="readme-shot">
-                            <img src="assets/images/DADAP/portfolio-upload.gif" alt="DADAP 포트폴리오 업로드 화면">
-                            <figcaption><strong>포트폴리오 업로드</strong><span>면접에 활용할 문서를 업로드하는 시작 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/DADAP/p2p.gif" alt="DADAP 실시간 면접 진행 화면">
-                            <figcaption><strong>실시간 면접</strong><span>AI 면접관과 실전 면접 흐름을 진행하는 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/DADAP/ARCHIVE.gif" alt="DADAP 학습 아카이브 화면">
-                            <figcaption><strong>학습 아카이브</strong><span>주제별 질문 카드를 탐색하는 학습 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/DADAP/mypage.gif" alt="DADAP 마이페이지 화면">
-                            <figcaption><strong>마이페이지</strong><span>면접 기록과 저장한 문제를 복기하는 사용자 활동 화면</span></figcaption>
-                        </figure>
-                    </div>
-
-                    <section class="project-readme-section">
-                        <h4>기술 스택</h4>
-                        <div class="stack-groups">
-                            <div>
-                                <strong>Backend</strong>
-                                <div class="stack-tags">
-                                    <span>Java 21</span>
-                                    <span>Spring Boot 3.5.9</span>
-                                    <span>Spring Security</span>
-                                    <span>Spring Data JPA</span>
-                                    <span>JJWT 0.12.5</span>
-                                    <span>Spring Retry</span>
-                                    <span>SpringDoc OpenAPI 2.7.0</span>
-                                    <span>AWS SDK S3 2.25.66</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>AI Server</strong>
-                                <div class="stack-tags">
-                                    <span>FastAPI 0.128.0</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Frontend</strong>
-                                <div class="stack-tags">
-                                    <span>React 19.2.0</span>
-                                    <span>Vite 7.2.4</span>
-                                    <span>TypeScript 5.9.3</span>
-                                    <span>Tailwind CSS 4.1.18</span>
-                                    <span>Axios 1.13.3</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Infra / Test</strong>
-                                <div class="stack-tags">
-                                    <span>Docker</span>
-                                    <span>AWS</span>
-                                    <span>k6</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>담당 업무</h4>
-                        <p class="section-note compact-note">
-                            다음 영역의 설계와 구현을 담당했습니다.
-                        </p>
-                        <ul class="scope-list">
-                            <li>
-                                <strong>면접 도메인</strong>
-                                <span>면접장 생성 · 질문/꼬리질문 생성 · 턴 미디어 업로드 · 리포트 생성/조회 · 면접 삭제</span>
-                            </li>
-                            <li>
-                                <strong>AI 서버 연동</strong>
-                                <span>WebClient 기반 클라이언트 · 오디오/비디오 분석 요청 분리 · <code>@Async</code> 비동기 처리 · <code>AnalysisJob</code> 상태 관리</span>
-                            </li>
-                            <li>
-                                <strong>커뮤니티 게시판</strong>
-                                <span>게시글 CRUD · 댓글 · 좋아요 · 목록 페이징 · 이미지 첨부</span>
-                            </li>
-                            <li>
-                                <strong>CS 학습 페이지</strong>
-                                <span>학습 질문 목록/상세 조회 · 키워드/꼬리질문 포함 응답 · 질문 조회수 집계</span>
-                            </li>
-                            <li>
-                                <strong>마이페이지 · 사용자</strong>
-                                <span>마이페이지 API · 닉네임 중복 체크/제한 · 회원 탈퇴 · 프로필 이미지 · 최근 활동 정보</span>
-                            </li>
-                            <li>
-                                <strong>AWS S3 스토리지</strong>
-                                <span>음성/영상 파일 업로드 · 재생용 presigned URL 발급</span>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>트러블슈팅: 비디오(비언어 지표) 분석 요청 병목</h4>
-                        <div class="problem-story compact-story">
-                            <div class="problem-story-main">
-                                <span>문제</span>
-                                <h5>AI 서버 지연 2초가 사용자 체감 30초 응답으로 증폭</h5>
-                                <p>AI 서버의 실제 지연은 약 2초였으나, 응답을 기다리는 동안 WAS 워커 스레드가 계속 점유되면서 후속 요청이 큐에서 대기하는 <strong>Thread Starvation</strong>이 발생했습니다. 이로 인해 사용자가 체감하는 응답 대기는 약 30초까지 누적되었습니다.</p>
-                            </div>
-                            <div class="problem-story-grid">
-                                <div>
-                                    <span>해결</span>
-                                    <p><code>202 Accepted</code>로 요청을 먼저 접수하고 AI 호출은 <code>@Async</code> 작업으로 분리</p>
-                                </div>
-                                <div>
-                                    <span>보완</span>
-                                    <p><code>QUEUED / RUNNING / DONE / FAILED</code> 상태로 작업 진행과 결과 조회 흐름 분리</p>
-                                </div>
-                                <div>
-                                    <span>검증</span>
-                                    <p>외부 네트워크 변수를 제거하기 위해 <strong>Mock AI 서버</strong>를 구축하고, k6 20VU로 동기/비동기 구조의 처리량과 완료 시간 비교</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>성과와 검증 결과</h4>
-                        <div class="impact-hero">
-                            <div>
-                                <span>전체 분석 완료 시간 단축</span>
-                                <strong>40,737ms → 25,347ms</strong>
-                                <p>대기하던 분석 작업을 스레드 풀에서 병렬 처리해 단축</p>
-                            </div>
-                            <ul>
-                                <li>체감 지연이 아닌 k6 부하 테스트로 정량 비교</li>
-                                <li>동기/비동기 구조를 동일 조건(20VU)에서 측정</li>
-                                <li>AI 응답 대기로 점유되던 요청 스레드가 풀리며 처리량 확보</li>
+                        <div>
+                            <h4>담당 업무</h4>
+                            <ul class="scope-list compact-scope">
+                                <li><strong>실시간 메시징</strong><span>STOMP와 Redis Pub/Sub 기반 cross-server 메시지 라우팅</span></li>
+                                <li><strong>게임 서버 로직</strong><span>세션, 라운드, 랭킹, 결과 상태를 Redis와 서버 이벤트로 관리</span></li>
+                                <li><strong>Quick Draw CNN</strong><span>데이터셋 전처리, 증강, CNN 학습, TF.js 변환</span></li>
+                                <li><strong>인프라</strong><span>Docker Compose, Nginx 리버스 프록시, 모니터링 구성</span></li>
                             </ul>
                         </div>
-                        <div class="project-hero-metrics">
-                            <div class="metric-card">
-                                <span class="metric-label">동시 처리량</span>
-                                <strong><span>80건</span><em>→</em><span>580건</span></strong>
-                                <p>k6 20VU 동일 부하에서 처리 완료한 요청 수</p>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-label">요청 접수 응답 시간</span>
-                                <strong><span>30,654ms</span><em>→</em><span>102ms</span></strong>
-                                <p>AI 작업 완료를 기다리지 않고 즉시 접수</p>
-                            </div>
-                        </div>
                     </section>
-
-                    <section class="project-readme-section">
-                        <h4>설계 과정에서 고민한 부분</h4>
-                        <div class="decision-list">
-                            <div>
-                                <strong>왜 <code>@Async</code>를 선택했는가? (다른 비동기 방식 대비)</strong>
-                                <ul>
-                                    <li>직접 스레드·<code>CompletableFuture</code> 대비 풀 관리가 선언적, 추가 인프라 0</li>
-                                    <li>기존 MVC·JPA 스택을 유지하며 무거운 작업만 오프로딩</li>
-                                    <li>제한된 스레드 풀이 외부 AI 서버 동시 호출 수를 통제하는 보호막 역할</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong>단순 <code>@Async</code>만으로 충분할까?</strong>
-                                <ul>
-                                    <li>백그라운드 처리만으로는 완료/실패 여부를 알기 어려움</li>
-                                    <li>결과 조회 시점에 작업 진행 상태가 필요해 상태 저장 구조 추가</li>
-                                    <li><code>AnalysisJob</code>과 결과 조회 API로 흐름 분리</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong>왜 비디오만 비동기로 분리했는가?</strong>
-                                <ul>
-                                    <li>오디오 분석 결과는 꼬리질문 생성에 즉시 사용됨</li>
-                                    <li>비동기로 분리하면 다음 질문 흐름이 끊김</li>
-                                    <li>오디오는 동기 유지, 비디오만 비동기로 분리해 응답성 확보</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>고찰</h4>
-                        <div class="reflection-note">
-                            <p>
-                                외부 AI API처럼 응답 시간이 긴 작업은 요청 접수와 작업 완료를 분리해야 사용자 응답성과 서버 안정성을 함께 확보할 수 있었습니다.
-                                다만 부하 테스트 응답 성공률이 약 75%에 머문 점은 아쉬움으로 남았는데, 비동기 폴링 타임아웃이 실제 AI 작업 시간보다 짧게 설정된 것이 원인이었습니다.
-                                향후에는 폴링 대신 <strong>SSE 기반 이벤트 전달</strong>로 전환해 상태 확인 구조를 더 안정적으로 다듬을 계획입니다.
-                            </p>
-                        </div>
-                    </section>
-                </div>
-            </article>
-
-            <article class="project-card" id="p-zipcheck">
-                <div class="project-readme">
-                    <div class="project-readme-head">
-                        <p class="project-kicker">Project 03</p>
-                        <div>
-                            <h3>ZipCheck</h3>
-                            <p>지도 기반 부동산 매물 · 감정 스티커 커뮤니티</p>
-                        </div>
-                        <div class="project-badges">
-                            <span>2인 팀</span>
-                            <span>Backend Developer · Full-Stack</span>
-                            <span>2025.11 - 2025.12</span>
-                        </div>
-                    </div>
-
-                    <div class="project-readme-hero">
-                        <div class="project-readme-copy">
-                            <h4>프로젝트 소개</h4>
-                            <p>
-                                ZipCheck는 지도 위에 감정 이모지 스티커를 부착해 동네 분위기를 직관적으로 공유하고,
-                                실거래가 차트와 AI 리뷰 요약으로 매물 선택을 돕는 부동산 커뮤니티 플랫폼입니다.
-                            </p>
-                            <div class="project-info-table">
-                                <div><strong>역할</strong><span>백엔드 도메인(인증·사용자·게시판·스토리지) · DB 설계와 쿼리 튜닝 · 프론트엔드 구성</span></div>
-                                <div><strong>인원</strong><span>2명</span></div>
-                                <div><strong>기간</strong><span>2025.11.17 - 2025.12.22</span></div>
-                                <div><strong>GitHub</strong><span><a href="https://github.com/ZipCheck" target="_blank" rel="noreferrer">github.com/ZipCheck</a></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="readme-gallery">
-                        <figure class="readme-shot">
-                            <img src="assets/images/ZipCheck/homepage.jpg" alt="ZipCheck 홈 화면">
-                            <figcaption><strong>홈</strong><span>서비스 소개와 주요 기능 진입 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/ZipCheck/mainpage1.jpg" alt="ZipCheck 지도 화면">
-                            <figcaption><strong>지도</strong><span>Kakao Map 기반 매물 탐색 화면</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/ZipCheck/mainpage2.png" alt="ZipCheck 스티커 지도">
-                            <figcaption><strong>스티커 지도</strong><span>지도 위 감정 스티커로 동네 분위기를 한눈에</span></figcaption>
-                        </figure>
-                        <figure class="readme-shot">
-                            <img src="assets/images/ZipCheck/aipage.png" alt="ZipCheck AI 분석">
-                            <figcaption><strong>AI 분석</strong><span>매물 리뷰를 AI가 요약한 리포트 화면</span></figcaption>
-                        </figure>
-                    </div>
-
-                    <section class="project-readme-section">
-                        <h4>기술 스택</h4>
-                        <div class="stack-groups">
-                            <div>
-                                <strong>Backend</strong>
-                                <div class="stack-tags">
-                                    <span>Java 17</span>
-                                    <span>Spring Boot 3.5.8</span>
-                                    <span>Spring Security</span>
-                                    <span>MyBatis 3.0.5</span>
-                                    <span>JJWT 0.12.6</span>
-                                    <span>AWS SDK S3 2.25.62</span>
-                                    <span>WebFlux WebClient</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Database</strong>
-                                <div class="stack-tags">
-                                    <span>MySQL 8.0</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>Frontend</strong>
-                                <div class="stack-tags">
-                                    <span>Vue 3</span>
-                                    <span>Pinia 3</span>
-                                    <span>Vue Router 4</span>
-                                    <span>Vite 2.9</span>
-                                    <span>Tailwind CSS 3.4</span>
-                                    <span>Chart.js 4.5</span>
-                                    <span>Axios</span>
-                                </div>
-                            </div>
-                            <div>
-                                <strong>External</strong>
-                                <div class="stack-tags">
-                                    <span>Kakao Map API</span>
-                                    <span>AWS S3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>담당 업무</h4>
-                        <p class="section-note compact-note">
-                            다음 영역의 설계와 구현을 담당했습니다.
-                        </p>
-                        <ul class="scope-list">
-                            <li>
-                                <strong>DB 설계 · 인덱스 · 쿼리 튜닝</strong>
-                                <span>Generated Column(STORED) · 복합 인덱스 3종 · SARGability 확보 · SQL Profiling 검증</span>
-                            </li>
-                            <li>
-                                <strong>인증 · JWT</strong>
-                                <span>Access/Refresh 이중 토큰 발급 · 재발급 흐름 · Spring Security 연동</span>
-                            </li>
-                            <li>
-                                <strong>사용자 · 마이페이지</strong>
-                                <span>프로필 관리 · 찜 매물 · 비밀번호 재설정 · 활동 이력</span>
-                            </li>
-                            <li>
-                                <strong>커뮤니티 게시판</strong>
-                                <span>게시글/댓글 CRUD · 좋아요/싫어요 · 이미지 첨부 · 소프트 삭제</span>
-                            </li>
-                            <li>
-                                <strong>공지사항</strong>
-                                <span>공지 CRUD · 목록 조회</span>
-                            </li>
-                            <li>
-                                <strong>AWS S3 스토리지</strong>
-                                <span>프로필/게시글 이미지 업로드 · presigned URL 발급</span>
-                            </li>
-                        </ul>
-                        <p class="skill-extra-note">
-                            추가로 <strong>Vue 3 · Pinia · Tailwind</strong> 기반 14개 페이지의 UI와 라우팅을 구성하고, Chart.js로 실거래가 차트를 시각화했습니다.
-                        </p>
-                    </section>
-
-                    <section class="project-readme-section">
+                    <section class="project-readme-section compact-architecture">
                         <h4>아키텍처</h4>
-                        <div class="architecture-image-wrap">
-                            <img class="architecture-image" src="assets/images/ZipCheck/aipage2.png" alt="ZipCheck AI RAG 인덱싱 흐름">
-                        </div>
-                        <p class="architecture-copy">
-                            매물 스티커를 Spring 서버가 AI 서버로 인덱싱 요청하고, FastAPI가 ChromaDB 벡터 DB에 적재하는 AI RAG 연동 구조입니다.
-                        </p>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>트러블슈팅: 720만 건 실거래가 조회 병목</h4>
-                        <div class="problem-story compact-story">
-                            <div class="problem-story-main">
-                                <span>문제</span>
-                                <h5>WHERE/JOIN 컬럼에 함수가 적용되어 720만 건 데이터에서 Full Table Scan 발생</h5>
-                                <p>가격 검색에서는 거래 금액이 <code>"123,000"</code>처럼 쉼표 포함 <code>VARCHAR</code>로 저장되어 매번 <code>CAST</code>·<code>REPLACE</code> 함수가 적용되었습니다. 지역 JOIN에서는 법정동 코드 10자리에 <code>LEFT(dong_code, 5)</code> 함수가 적용되었습니다. 두 경우 모두 함수가 적용된 컬럼은 인덱스를 탈 수 없어, 720만 건 규모에서는 3-way JOIN과 함께 Full Table Scan이 발생했습니다.</p>
-                            </div>
-                            <div class="problem-story-grid">
-                                <div>
-                                    <span>해결</span>
-                                    <p><strong>Generated Column (STORED)</strong>을 두 곳에 동일 패턴으로 적용 — 가격은 <code>deal_amount_num</code>, JOIN은 <code>sgg_prefix</code>로 함수 연산을 DB가 미리 계산해 인덱스 부여</p>
-                                </div>
-                                <div>
-                                    <span>보완</span>
-                                    <p>아파트 + 날짜 / 면적 / 금액 조합 <strong>복합 인덱스 3종</strong>으로 다차원 필터링 가속, JOIN용 <code>(sgg_prefix, dong_name)</code> 인덱스 추가</p>
-                                </div>
-                                <div>
-                                    <span>검증</span>
-                                    <p>SQL Profiling으로 CPU 시간을 측정하고, <code>EXPLAIN</code>으로 실행 계획 변화(<code>type: ALL → range</code>, <code>key: NULL → idx_hd_apt_amount</code>)를 확인해 인덱스 가동률(SARGability)을 직접 증명</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>성과와 검증 결과</h4>
-                        <div class="impact-hero">
-                            <div>
-                                <span>쿼리 응답 시간 단축</span>
-                                <strong>594ms → 238ms</strong>
-                                <p>100만 건 데이터셋 SQL Profiling 3회 평균</p>
-                            </div>
-                            <ul>
-                                <li>Generated Column으로 함수 연산 오버헤드 차단</li>
-                                <li>복합 인덱스로 Full Scan → Index Range Scan 전환</li>
-                                <li>720만 건 기준 가격 범위 검색 약 20배 향상</li>
-                            </ul>
-                        </div>
-                        <div class="project-hero-metrics">
-                            <div class="metric-card">
-                                <span class="metric-label">CPU User Time</span>
-                                <strong><span>437.5ms</span><em>→</em><span>1ms 미만</span></strong>
-                                <p>매회 발생하던 문자열 변환 연산 제거</p>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-label">운영 쿼리 실측(720만 건 · 서울 조회)</span>
-                                <strong><span>67초</span><em>→</em><span>2초</span></strong>
-                                <p>EXPLAIN ANALYZE 기준 3-way JOIN 종합 쿼리</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>설계 과정에서 고민한 부분</h4>
-                        <div class="decision-list">
-                            <div>
-                                <strong>인덱스 비용을 감수할 가치가 있는가?</strong>
-                                <ul>
-                                    <li>부동산 실거래 데이터는 적재형(Append-only)이고 99% 이상이 조회</li>
-                                    <li>쓰기 성능 손실보다 사용자 조회 경험 최적화가 우선</li>
-                                    <li>Read-Heavy 패턴에서는 인덱스 비용이 정당화됨</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong>왜 Generated Column을 선택했는가? (4가지 대안 비교)</strong>
-                                <ul>
-                                    <li><strong>CAST/REPLACE 유지</strong> — 함수 적용으로 인덱스 무력화, 데이터 증가 시 비용 폭증</li>
-                                    <li><strong>원본 컬럼 타입 변경</strong> — 공공데이터 원본 보존 불가, 기존 적재 로직 마이그레이션 리스크</li>
-                                    <li><strong>별도 숫자 컬럼 + 애플리케이션 관리</strong> — 두 컬럼 정합성을 앱 코드가 책임져야 함</li>
-                                    <li><strong>Generated Column (STORED)</strong> — 원본 보존, 정합성은 DB가 보장, 인덱스 활용 가능</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong>왜 SQL Profiling으로 측정했는가?</strong>
-                                <ul>
-                                    <li>API 측정은 네트워크·WAS 변수가 섞여 DB 최적화 효과 왜곡</li>
-                                    <li><code>SHOW PROFILE CPU</code>로 파싱·실행 단계별 CPU 시간 분리</li>
-                                    <li><code>EXPLAIN</code>과 병행해 인덱스 가동률을 직접 증명</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong>왜 <code>apt_seq</code>를 복합 인덱스 맨 앞에 두었는가?</strong>
-                                <ul>
-                                    <li>서비스 핵심 조회 패턴은 "특정 아파트의 거래 내역" 조회</li>
-                                    <li><code>apt_seq</code>로 먼저 범위를 좁힌 뒤 날짜·면적·가격 조건 적용</li>
-                                    <li>선택도가 가장 높은 컬럼을 선두에 두어 인덱스 가지치기 효율 극대화</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="project-readme-section">
-                        <h4>고찰</h4>
-                        <div class="reflection-note">
-                            <p>
-                                가공된 데이터를 애플리케이션 레이어가 아닌 DB 엔진 레벨에서 해결할 때 확장성이 어디까지 달라지는지를 체감한 작업이었습니다.
-                                인덱스를 가동하지 못하는 쿼리는 데이터셋이 커질수록 비례 이상으로 비용이 증가한다는 점,
-                                그리고 측정 도구의 선택이 곧 최적화 근거의 신뢰도를 결정한다는 점을 함께 배웠습니다.
-                            </p>
-                        </div>
+                        <div class="architecture-image-wrap"><img class="architecture-image" src="assets/images/SpaceArcade/architecture.png" alt="우주오락실 시스템 아키텍처"></div>
+                        <p class="architecture-copy">Nginx가 트래픽을 여러 백엔드 인스턴스로 분산하고, 서버 간 실시간 메시지는 Redis Pub/Sub으로 동기화하는 구조입니다.</p>
                     </section>
                 </div>
             </article>
+
+            <article class="project-card project-slide">
+                <div class="project-readme project-slide-grid">
+                    <div class="project-readme-head"><p class="project-kicker">Project 01 · 3/3</p><div><h3>우주오락실 · 문제 해결</h3><p>분산 WebSocket 환경과 브라우저 AI 모델 적용 과정의 문제를 해결했습니다.</p></div></div>
+                    <section class="project-readme-section">
+                        <h4>트러블슈팅</h4>
+                        <div class="problem-story-grid slide-problems">
+                            <div><span>메시지 동기화</span><p>STOMP SimpleBroker는 인스턴스 간 메시지를 공유하지 못해 같은 방 유저가 서버별로 분리되었습니다. Redis Pub/Sub 구독 구조로 broadcast와 private message를 서버 간 동기화했습니다.</p></div>
+                            <div><span>100명 동접 백프레셔</span><p>STOMP 채널 기본 스레드 설정에서 DISCONNECT 처리가 지연되었습니다. 채널 스레드 풀과 큐 용량을 조정하고 transport layer 기준으로 동접 카운트를 보완했습니다.</p></div>
+                            <div><span>CNN 브라우저 이식</span><p>Keras 3 모델을 TF.js에서 로드하지 못해 model.json의 입력 shape와 weight prefix를 패치하고, 캔버스 입력 전처리를 학습 데이터와 맞췄습니다.</p></div>
+                        </div>
+                    </section>
+                    <section class="project-readme-section">
+                        <h4>결과와 배운 점</h4>
+                        <div class="reflection-note"><p>단일 서버에서는 보이지 않던 WebSocket 메시징의 분산 환경 가정을 확인했고, AI 모델도 학습 정확도뿐 아니라 브라우저 로딩 포맷과 입력 전처리까지 서비스 흐름 안에서 맞춰야 한다는 점을 배웠습니다.</p></div>
+                    </section>
+                </div>
+            </article>
+
+            <article class="project-card project-slide" id="p-dadap">
+                <div class="project-readme project-slide-grid">
+                    <div class="project-readme-head"><p class="project-kicker">Project 02 · 1/3</p><div><h3>DADAP</h3><p>AI 기반 기술 면접 연습 및 포트폴리오 분석 서비스</p></div><div class="project-badges"><span class="award-badge">🏆 수상 프로젝트</span><span>6인 팀</span><span>Backend</span><span>2026.01 - 2026.02 · 6주</span></div></div>
+                    <div class="project-readme-hero"><div class="project-readme-copy"><h4>프로젝트 소개</h4><p>DADAP은 CS 면접과 포트폴리오 면접을 반복 연습하고, 답변 분석 결과와 피드백, 꼬리질문으로 복기할 수 있도록 만든 AI 면접 분석 플랫폼입니다.</p><div class="project-info-table"><div><strong>역할</strong><span>Backend</span></div><div><strong>인원</strong><span>6명</span></div><div><strong>기간</strong><span>2026.01.06 - 2026.02.13</span></div><div><strong>수상</strong><span>SSAFY 공통 프로젝트 우수상</span></div><div><strong>담당</strong><span>AI 서버 연동, 비동기 분석 상태 관리, 면접/커뮤니티 API</span></div><div><strong>GitHub</strong><span><a href="https://github.com/Min-code0202/Dadap-public" target="_blank" rel="noreferrer">github.com/Min-code0202/Dadap-public</a></span></div></div></div></div>
+                    <div class="readme-gallery slide-gallery"><figure class="readme-shot"><img src="assets/images/DADAP/portfolio-upload.gif" alt="DADAP 포트폴리오 업로드 화면"><figcaption><strong>포트폴리오 업로드</strong><span>문서 기반 면접 준비</span></figcaption></figure><figure class="readme-shot"><img src="assets/images/DADAP/p2p.gif" alt="DADAP 실시간 면접 화면"><figcaption><strong>실시간 면접</strong><span>AI 면접관과 문답</span></figcaption></figure><figure class="readme-shot"><img src="assets/images/DADAP/ARCHIVE.gif" alt="DADAP 학습 아카이브 화면"><figcaption><strong>학습 아카이브</strong><span>질문 카드 탐색</span></figcaption></figure><figure class="readme-shot"><img src="assets/images/DADAP/mypage.gif" alt="DADAP 마이페이지 화면"><figcaption><strong>마이페이지</strong><span>면접 기록 복기</span></figcaption></figure></div>
+                </div>
+            </article>
+
+            <article class="project-card project-slide"><div class="project-readme project-slide-grid"><div class="project-readme-head"><p class="project-kicker">Project 02 · 2/3</p><div><h3>DADAP · 구조와 담당 업무</h3><p>면접 도메인과 외부 AI 분석 요청 흐름을 분리해 구현했습니다.</p></div></div><section class="project-readme-section slide-two-column"><div><h4>기술 스택</h4><div class="stack-groups compact-stack"><div><strong>Backend</strong><div class="stack-tags"><span>Java 21</span><span>Spring Boot</span><span>Spring Security</span><span>JPA</span><span>WebClient</span><span>Spring Retry</span></div></div><div><strong>AI · Storage</strong><div class="stack-tags"><span>FastAPI</span><span>AWS S3</span><span>presigned URL</span></div></div><div><strong>Test</strong><div class="stack-tags"><span>k6</span><span>Mock AI Server</span></div></div></div></div><div><h4>담당 업무</h4><ul class="scope-list compact-scope"><li><strong>면접 도메인</strong><span>질문/꼬리질문, 턴 미디어 업로드, 리포트 생성/조회</span></li><li><strong>AI 서버 연동</strong><span>WebClient 기반 오디오/비디오 분석 요청 분리</span></li><li><strong>비동기 상태 관리</strong><span>@Async 작업, AnalysisJob 상태, 결과 조회 API</span></li><li><strong>스토리지</strong><span>음성/영상 업로드와 재생용 presigned URL 발급</span></li></ul></div></section><section class="project-readme-section"><h4>분석 흐름</h4><div class="trouble-flow"><div><span>1. 접수</span><p>면접 턴 미디어 업로드</p></div><div><span>2. 분석</span><p>AI 서버로 오디오/비디오 분석 요청</p></div><div><span>3. 상태</span><p>QUEUED/RUNNING/DONE/FAILED 관리</p></div><div><span>4. 리포트</span><p>피드백과 꼬리질문 제공</p></div></div></section></div></article>
+
+            <article class="project-card project-slide"><div class="project-readme project-slide-grid"><div class="project-readme-head"><p class="project-kicker">Project 02 · 3/3</p><div><h3>DADAP · 문제 해결</h3><p>외부 AI 분석 지연이 WAS 요청 처리량에 미치는 문제를 줄였습니다.</p></div></div><section class="project-readme-section"><h4>트러블슈팅: 비디오 분석 요청 병목</h4><div class="problem-story compact-story"><div class="problem-story-main"><span>문제</span><h5>AI 서버 지연 2초가 사용자 체감 30초 응답으로 증폭</h5><p>AI 응답을 기다리는 동안 WAS 워커 스레드가 점유되어 후속 요청이 큐에서 대기하는 Thread Starvation이 발생했습니다.</p></div><div class="problem-story-grid"><div><span>해결</span><p>202 Accepted로 요청을 먼저 접수하고, AI 호출은 @Async 작업으로 분리했습니다.</p></div><div><span>상태 관리</span><p>QUEUED/RUNNING/DONE/FAILED 상태와 결과 조회 API를 별도로 구성했습니다.</p></div><div><span>검증</span><p>Mock AI 서버와 k6 20VU 테스트로 동기/비동기 처리량과 완료 시간을 비교했습니다.</p></div></div></div></section><section class="project-readme-section"><h4>성과</h4><div class="project-hero-metrics"><div class="metric-card"><span class="metric-label">전체 분석 완료 시간</span><strong><span>40,737ms</span><em>→</em><span>25,347ms</span></strong><p>백그라운드 병렬 처리로 단축</p></div><div class="metric-card"><span class="metric-label">요청 접수 응답 시간</span><strong><span>30,654ms</span><em>→</em><span>102ms</span></strong><p>분석 완료 대기 없이 즉시 접수</p></div></div></section></div></article>
+
+            <article class="project-card project-slide" id="p-zipcheck"><div class="project-readme project-slide-grid"><div class="project-readme-head"><p class="project-kicker">Project 03 · 1/3</p><div><h3>ZipCheck</h3><p>지도 기반 부동산 매물 · 감정 스티커 커뮤니티</p></div><div class="project-badges"><span>2인 팀</span><span>Backend</span><span>2025.11 - 2025.12 · 6주</span></div></div><div class="project-readme-hero"><div class="project-readme-copy"><h4>프로젝트 소개</h4><p>ZipCheck는 지도 위에 감정 이모지 스티커를 부착해 동네 분위기를 공유하고, 실거래가 차트와 AI 리뷰 요약으로 매물 선택을 돕는 부동산 커뮤니티 플랫폼입니다.</p><div class="project-info-table"><div><strong>역할</strong><span>Backend</span></div><div><strong>인원</strong><span>2명</span></div><div><strong>기간</strong><span>2025.11.17 - 2025.12.22</span></div><div><strong>담당</strong><span>DB 설계, 쿼리 튜닝, 인증/사용자/게시판/스토리지 API</span></div><div><strong>GitHub</strong><span><a href="https://github.com/ZipCheck" target="_blank" rel="noreferrer">github.com/ZipCheck</a></span></div></div></div></div><div class="readme-gallery slide-gallery"><figure class="readme-shot"><img src="assets/images/ZipCheck/homepage.jpg" alt="ZipCheck 홈 화면"><figcaption><strong>홈</strong><span>서비스 진입</span></figcaption></figure><figure class="readme-shot"><img src="assets/images/ZipCheck/mainpage1.jpg" alt="ZipCheck 지도 화면"><figcaption><strong>지도</strong><span>매물 탐색</span></figcaption></figure><figure class="readme-shot"><img src="assets/images/ZipCheck/mainpage2.png" alt="ZipCheck 스티커 지도"><figcaption><strong>스티커 지도</strong><span>동네 분위기 공유</span></figcaption></figure><figure class="readme-shot"><img src="assets/images/ZipCheck/aipage.png" alt="ZipCheck AI 분석"><figcaption><strong>AI 분석</strong><span>리뷰 요약 리포트</span></figcaption></figure></div></div></article>
+
+            <article class="project-card project-slide"><div class="project-readme project-slide-grid"><div class="project-readme-head"><p class="project-kicker">Project 03 · 2/3</p><div><h3>ZipCheck · 구조와 담당 업무</h3><p>조회 성능을 중심으로 DB 설계와 백엔드 API를 구현했습니다.</p></div></div><section class="project-readme-section slide-two-column"><div><h4>기술 스택</h4><div class="stack-groups compact-stack"><div><strong>Backend</strong><div class="stack-tags"><span>Java 17</span><span>Spring Boot</span><span>Spring Security</span><span>MyBatis</span><span>WebClient</span><span>AWS S3</span></div></div><div><strong>Database</strong><div class="stack-tags"><span>MySQL 8.0</span><span>Generated Column</span><span>Composite Index</span></div></div><div><strong>External</strong><div class="stack-tags"><span>Kakao Map API</span><span>AI Server</span><span>ChromaDB</span></div></div></div></div><div><h4>담당 업무</h4><ul class="scope-list compact-scope"><li><strong>DB 설계 · 튜닝</strong><span>Generated Column, 복합 인덱스, SARGability 확보</span></li><li><strong>인증 · 사용자</strong><span>JWT 재발급, 마이페이지, 프로필/활동 이력</span></li><li><strong>커뮤니티</strong><span>게시글/댓글 CRUD, 좋아요/싫어요, 이미지 첨부</span></li><li><strong>스토리지</strong><span>S3 이미지 업로드와 presigned URL 발급</span></li></ul></div></section><section class="project-readme-section compact-architecture"><h4>AI RAG 연동</h4><div class="architecture-image-wrap"><img class="architecture-image" src="assets/images/ZipCheck/aipage2.png" alt="ZipCheck AI RAG 인덱싱 흐름"></div><p class="architecture-copy">매물 스티커를 Spring 서버가 AI 서버로 인덱싱 요청하고, FastAPI가 ChromaDB 벡터 DB에 적재하는 구조입니다.</p></section></div></article>
+
+            <article class="project-card project-slide"><div class="project-readme project-slide-grid"><div class="project-readme-head"><p class="project-kicker">Project 03 · 3/3</p><div><h3>ZipCheck · 문제 해결</h3><p>720만 건 실거래가 조회 병목을 실행계획과 인덱스로 개선했습니다.</p></div></div><section class="project-readme-section"><h4>트러블슈팅: 720만 건 실거래가 조회 병목</h4><div class="problem-story compact-story"><div class="problem-story-main"><span>문제</span><h5>WHERE/JOIN 컬럼에 함수가 적용되어 Full Table Scan 발생</h5><p>거래 금액은 쉼표 포함 VARCHAR라 CAST/REPLACE가 필요했고, 지역 JOIN은 LEFT(dong_code, 5)를 사용했습니다. 함수가 적용된 컬럼은 인덱스를 타지 못해 720만 건 규모에서 조회 비용이 급증했습니다.</p></div><div class="problem-story-grid"><div><span>해결</span><p>가격은 deal_amount_num, 지역 JOIN은 sgg_prefix Generated Column(STORED)으로 분리해 인덱스를 부여했습니다.</p></div><div><span>보완</span><p>아파트 + 날짜/면적/금액 조합 복합 인덱스 3종과 JOIN용 인덱스를 추가했습니다.</p></div><div><span>검증</span><p>SQL Profiling과 EXPLAIN으로 CPU 시간과 실행 계획 변화를 확인했습니다.</p></div></div></div></section><section class="project-readme-section"><h4>성과</h4><div class="project-hero-metrics"><div class="metric-card"><span class="metric-label">운영 쿼리 실측</span><strong><span>67초</span><em>→</em><span>2초</span></strong><p>720만 건 · 서울 조회 기준</p></div><div class="metric-card"><span class="metric-label">CPU User Time</span><strong><span>437.5ms</span><em>→</em><span>1ms 미만</span></strong><p>문자열 변환 연산 제거</p></div><div class="metric-card"><span class="metric-label">검색 성능</span><strong><span>약 20배</span></strong><p>가격 범위 검색 기준 개선</p></div></div></section></div></article>
 
             <div class="minor-projects" id="p-etc">
                 <h3 class="minor-projects-heading">기타 프로젝트</h3>
@@ -927,7 +372,7 @@
                         <time>2026.02 - 2026.03</time>
                         <div class="mp-body">
                             <h4><a href="drafts/dahaeng-draft.html">Dahaeng (다행)</a></h4>
-                            <span class="mp-meta">6인 팀 · FE 3 / BE 3 · Backend</span>
+                            <span class="mp-meta">6인 팀 · FE 3 / BE 3 · Backend · Infra</span>
                             <p class="mp-desc">YouTube 시청 취향을 분석해 여행 도시를 추천하고, 추천 근거까지 함께 제공하는 AI 여행 추천 서비스입니다.</p>
                             <span class="mp-points-label">담당 역할</span>
                             <ul class="mp-points">
@@ -960,6 +405,8 @@
 </body>
 
 </html>
+
+
 
 
 
