@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Keras model to TensorFlow.js load flow</title>
+  <desc id="desc">Patch converted model metadata and align canvas preprocessing for browser inference.</desc>
+  <rect width="960" height="420" fill="#f7fbfa"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#177c73"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#17443f" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(42 92)">
+    <rect width="214" height="226" rx="18" fill="#ffffff" stroke="#cfe0dc" filter="url(#shadow)"/>
+    <text x="107" y="48" text-anchor="middle" fill="#16302c" font-family="Arial, sans-serif" font-size="22" font-weight="800">Converted</text>
+    <text x="107" y="76" text-anchor="middle" fill="#16302c" font-family="Arial, sans-serif" font-size="22" font-weight="800">model.json</text>
+    <text x="107" y="122" text-anchor="middle" fill="#b84d2b" font-family="Arial, sans-serif" font-size="15" font-weight="800">batch_shape</text>
+    <text x="107" y="154" text-anchor="middle" fill="#b84d2b" font-family="Arial, sans-serif" font-size="15" font-weight="800">sequential_N/</text>
+    <text x="107" y="190" text-anchor="middle" fill="#6b7774" font-family="Arial, sans-serif" font-size="14">load failed</text>
+  </g>
+
+  <path d="M282 205 H366" stroke="#177c73" stroke-width="7" fill="none" marker-end="url(#arrow)"/>
+
+  <g transform="translate(394 76)">
+    <rect width="238" height="258" rx="18" fill="#eaf6f3" stroke="#8fc5bb" filter="url(#shadow)"/>
+    <text x="119" y="48" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="23" font-weight="800">Runtime Patch</text>
+    <text x="119" y="94" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="15">batch_shape</text>
+    <text x="119" y="120" text-anchor="middle" fill="#177c73" font-family="Arial, sans-serif" font-size="15" font-weight="800">batch_input_shape</text>
+    <text x="119" y="164" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="15">remove weight prefix</text>
+    <text x="119" y="202" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="15">merge bin shards</text>
+    <text x="119" y="232" text-anchor="middle" fill="#b86b22" font-family="Arial, sans-serif" font-size="15" font-weight="800">tf.io.fromMemory</text>
+  </g>
+
+  <path d="M660 205 H740" stroke="#177c73" stroke-width="7" fill="none" marker-end="url(#arrow)"/>
+
+  <g transform="translate(766 76)">
+    <rect width="152" height="258" rx="18" fill="#ffffff" stroke="#cfe0dc" filter="url(#shadow)"/>
+    <text x="76" y="42" text-anchor="middle" fill="#16302c" font-family="Arial, sans-serif" font-size="20" font-weight="800">Canvas</text>
+    <rect x="36" y="70" width="80" height="80" rx="10" fill="#f1f5f4" stroke="#cfe0dc"/>
+    <path d="M50 124 C62 86 94 92 78 122 C108 114 105 144 58 140" fill="none" stroke="#0d4f49" stroke-width="8" stroke-linecap="round"/>
+    <text x="76" y="184" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="13">bbox + padding</text>
+    <text x="76" y="208" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="13">28 x 28 x 1</text>
+    <text x="76" y="232" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="13">normalize</text>
+  </g>
+</svg>

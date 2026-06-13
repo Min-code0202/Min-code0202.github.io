@@ -434,6 +434,15 @@ a:hover {
         line-height: 1.25;
     }
 
+    .project-card .project-overview-detail {
+        font-size: clamp(0.78rem, 0.88vw, 0.95rem);
+    }
+
+    .project-card .project-overview-copy .project-badges {
+        justify-content: flex-start;
+        max-width: none;
+    }
+
     .project-card .project-readme-section {
         gap: 12px;
         padding-top: 14px;
@@ -498,11 +507,6 @@ a:hover {
         padding: 14px 16px;
     }
 
-    .project-card .architecture-image-wrap {
-        padding: 6px;
-    }
-
-    .project-card .architecture-image,
     .project-card .project-readme-visual img {
         max-height: 150px;
         object-fit: contain;
@@ -527,6 +531,55 @@ a:hover {
     .minor-project-list li {
         grid-template-columns: 100px minmax(0, 1fr);
         gap: 14px;
+    }
+}
+
+@media screen and (min-width: 761px) {
+    .draft-page .site-nav-inner,
+    .draft-page .container {
+        width: min(1120px, calc(100vw - 48px));
+    }
+
+    .draft-page .panel {
+        width: auto;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+        padding: 30px 34px;
+    }
+
+    .draft-page #projects {
+        padding: 30px 34px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        gap: 28px;
+    }
+
+    .draft-page .project-card,
+    .draft-page .minor-projects {
+        width: auto;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .draft-page .project-card {
+        padding: 0;
+    }
+
+    .draft-page .project-card .project-readme {
+        height: auto;
+        max-width: 960px;
+        margin: 0 auto;
+        transform: none;
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .draft-page .readme-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1438,6 +1491,14 @@ a:hover {
     padding: 10px 12px;
 }
 
+.slide-problems {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.slide-problems div {
+    min-height: 0;
+}
+
 .compact-architecture {
     gap: 12px;
 }
@@ -1451,12 +1512,154 @@ a:hover {
     object-fit: contain;
 }
 
-.slide-problems {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.project-overview-slide {
+    align-content: stretch;
 }
 
-.slide-problems div {
+.project-overview-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+    gap: clamp(28px, 4vw, 56px);
+    height: 100%;
     min-height: 0;
+    align-items: start;
+}
+
+.project-overview-copy {
+    display: grid;
+    align-content: start;
+    gap: clamp(10px, 1vw, 14px);
+    min-width: 0;
+}
+
+.project-overview-copy h3 {
+    margin: 0;
+    color: var(--accent-dark);
+    font-size: clamp(1.55rem, 2.15vw, 2.45rem);
+    line-height: 1.18;
+}
+
+.project-lead {
+    margin: 0;
+    color: #2f3d39;
+    font-size: clamp(0.82rem, 0.95vw, 1rem);
+    font-weight: 500;
+    line-height: 1.58;
+}
+
+.project-overview-section {
+    display: grid;
+    gap: 8px;
+    padding-top: 8px;
+}
+
+.project-overview-section h4 {
+    margin: 0;
+    color: #737b78;
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: 800;
+}
+
+.project-overview-table {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+}
+
+.project-overview-table div {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 14px;
+}
+
+.project-overview-table dt {
+    color: var(--ink);
+    font-size: clamp(0.78rem, 0.86vw, 0.92rem);
+    font-weight: 700;
+}
+
+.project-overview-table dd {
+    margin: 0;
+    color: #263430;
+    font-size: clamp(0.78rem, 0.86vw, 0.92rem);
+    line-height: 1.5;
+}
+
+.project-role-list {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-role-list li {
+    position: relative;
+    padding-left: 16px;
+    color: #263430;
+    font-size: clamp(0.78rem, 0.88vw, 0.95rem);
+    line-height: 1.5;
+}
+
+.project-role-list li::before {
+    content: "";
+    position: absolute;
+    top: 0.68em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.project-overview-media {
+    display: grid;
+    gap: 14px;
+    padding-top: clamp(2.15rem, 2.85vw, 3.15rem);
+    min-width: 0;
+}
+
+.project-main-shot,
+.project-shot-grid figure {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #dfe8e4;
+    border-radius: 8px;
+    background: #fbfcfc;
+}
+
+.project-main-shot img,
+.project-shot-grid img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.project-main-shot img {
+    aspect-ratio: 16 / 8.8;
+}
+
+.project-diagram-shot img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.project-shot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.project-shot-grid img {
+    aspect-ratio: 16 / 9;
+}
+
+.project-shot-grid figcaption {
+    padding: 7px 9px;
+    color: var(--accent-dark);
+    font-size: clamp(0.68rem, 0.74vw, 0.8rem);
+    font-weight: 700;
 }
 
 .project-kicker {
@@ -1619,6 +1822,30 @@ a:hover {
     gap: 16px;
     border-top: 1px solid #e5ece9;
     padding-top: 22px;
+}
+
+.project-readme-head + .project-readme-section {
+    border-top: 0;
+}
+
+.architecture-image-wrap {
+    border: 1px solid #e5ece9;
+    border-radius: 8px;
+    background: #fbfcfc;
+    padding: 12px;
+}
+
+.architecture-image {
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.architecture-copy {
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.62;
 }
 
 .stack-groups {
@@ -1993,13 +2220,93 @@ a:hover {
 
 .problem-story {
     display: grid;
-    gap: 22px;
+    gap: 16px;
+}
+
+.trouble-visual {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background: transparent;
+    min-height: 390px;
+}
+
+.trouble-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+}
+
+.compact-story {
+    gap: 12px;
+}
+
+.compact-story:has(.trouble-visual) {
+    grid-template-columns: minmax(0, 0.86fr) minmax(430px, 1.14fr);
+    grid-template-areas:
+        "main visual"
+        "grid visual";
+    align-items: stretch;
+    gap: 24px;
+}
+
+.compact-story:has(.trouble-visual) .trouble-visual {
+    grid-area: visual;
+}
+
+.compact-story:has(.trouble-visual) .problem-story-main {
+    grid-area: main;
+}
+
+.compact-story:has(.trouble-visual) .problem-story-grid {
+    grid-area: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 9px;
+}
+
+.compact-story .problem-story-main {
+    gap: 6px;
+}
+
+.compact-story .problem-story-main h5 {
+    font-size: 1.02rem;
+    line-height: 1.34;
+}
+
+.compact-story .problem-story-main p,
+.compact-story .problem-story-grid p {
+    font-size: 0.82rem;
+    line-height: 1.48;
+}
+
+.compact-story .problem-story-grid {
+    gap: 12px;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.problem-story code {
+    border-radius: 4px;
+    background: #edf5f3;
+    padding: 0.05em 0.32em;
+    color: var(--accent-dark);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.92em;
+    font-weight: 700;
 }
 
 .problem-story-main {
     display: grid;
     gap: 9px;
-    max-width: 880px;
+    max-width: none;
+    border: 0;
+    border-bottom: 1px solid #dce8e4;
+    border-radius: 0;
+    background: transparent;
+    padding: 0 0 12px;
 }
 
 .problem-story-main h5 {
@@ -2027,7 +2334,32 @@ a:hover {
 .problem-story-grid div {
     display: grid;
     align-content: start;
-    gap: 8px;
+    gap: 5px;
+    border: 0;
+    border-bottom: 1px solid #e1eae6;
+    border-radius: 0;
+    background: transparent;
+    padding: 0 0 10px;
+}
+
+.compact-story:has(.trouble-visual) .problem-story-grid div {
+    border-left: 0;
+}
+
+.problem-story-main span,
+.problem-story-grid span {
+    color: var(--accent-dark);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.problem-story-grid span {
+    display: block;
+    width: auto;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
 }
 
 .decision-note {
@@ -2106,6 +2438,99 @@ a:hover {
     color: #3f4c48;
     font-size: 0.95rem;
     line-height: 1.78;
+}
+
+.reflection-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(28px, 4vw, 54px);
+    align-items: start;
+}
+
+.reflection-lead {
+    display: grid;
+    gap: 14px;
+    padding-top: 8px;
+}
+
+.reflection-lead span,
+.reflection-points span {
+    color: var(--accent-dark);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.reflection-lead h4 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.28rem, 1.65vw, 1.72rem);
+    line-height: 1.38;
+}
+
+.reflection-lead p,
+.reflection-points p {
+    margin: 0;
+    color: #3f4c48;
+    font-size: 0.94rem;
+    line-height: 1.72;
+}
+
+.reflection-points {
+    display: grid;
+    gap: 18px;
+}
+
+.reflection-points div {
+    display: grid;
+    gap: 7px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e1eae6;
+}
+
+.reflection-points div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.reflection-essay {
+    display: grid;
+    gap: 18px;
+    max-width: 980px;
+}
+
+.reflection-essay div {
+    display: grid;
+    gap: 7px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e1eae6;
+}
+
+.reflection-essay div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.reflection-essay span {
+    color: var(--accent-dark);
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.reflection-essay p {
+    margin: 0;
+    color: #3f4c48;
+    font-size: 0.9rem;
+    line-height: 1.68;
+}
+
+.reflection-essay code {
+    border-radius: 4px;
+    background: #edf5f3;
+    padding: 0.05em 0.32em;
+    color: var(--accent-dark);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.92em;
+    font-weight: 700;
 }
 
 .minor-projects {
@@ -2237,26 +2662,6 @@ a:hover {
     height: 4px;
     border-radius: 50%;
     background: var(--accent);
-}
-
-.architecture-image-wrap {
-    border: 1px solid #e5ece9;
-    border-radius: 8px;
-    background: #fbfcfc;
-    padding: 12px;
-}
-
-.architecture-image {
-    display: block;
-    width: 100%;
-    border-radius: 6px;
-}
-
-.architecture-copy {
-    margin: 14px 0 0;
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.62;
 }
 
 .readme-footer-grid {
@@ -2470,6 +2875,8 @@ a:hover {
     }
 
     .project-readme-hero,
+    .project-overview-detail,
+    .reflection-layout,
     .readme-gallery,
     .readme-footer-grid,
     .project-hero-metrics,
@@ -2495,7 +2902,8 @@ a:hover {
     }
 
     .project-info-table,
-    .stack-groups {
+    .stack-groups,
+    .project-shot-grid {
         grid-template-columns: 1fr;
     }
 
@@ -2503,6 +2911,22 @@ a:hover {
         width: 100%;
         justify-self: stretch;
         padding-top: 0;
+    }
+
+    .project-overview-media {
+        padding-top: 0;
+    }
+
+    .compact-story:has(.trouble-visual) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "visual"
+            "main"
+            "grid";
+    }
+
+    .trouble-visual {
+        min-height: 260px;
     }
 
     .skill-scan-card {

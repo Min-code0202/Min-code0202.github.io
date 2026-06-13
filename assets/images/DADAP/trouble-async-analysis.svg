@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Async AI analysis flow and measured result</title>
+  <desc id="desc">Request acceptance, asynchronous video analysis, status tracking, and k6 measured performance improvement.</desc>
+  <rect width="960" height="420" fill="#f7fbfa"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#177c73"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#17443f" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(42 68)">
+    <rect width="174" height="206" rx="18" fill="#ffffff" stroke="#cfe0dc" filter="url(#shadow)"/>
+    <text x="87" y="48" text-anchor="middle" fill="#16302c" font-family="Arial, sans-serif" font-size="22" font-weight="800">Client</text>
+    <text x="87" y="86" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="15">video upload</text>
+    <text x="87" y="116" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="15">analysis request</text>
+    <rect x="30" y="148" width="114" height="38" rx="19" fill="#edf5f3" stroke="#b7d4cd"/>
+    <text x="87" y="173" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="14" font-weight="800">poll result</text>
+  </g>
+
+  <path d="M238 168 H310" stroke="#177c73" stroke-width="7" fill="none" marker-end="url(#arrow)"/>
+
+  <g transform="translate(334 42)">
+    <rect width="226" height="258" rx="18" fill="#eaf6f3" stroke="#8fc5bb" filter="url(#shadow)"/>
+    <text x="113" y="48" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="23" font-weight="800">Spring API</text>
+    <g transform="translate(32 82)">
+      <rect width="162" height="44" rx="10" fill="#ffffff" stroke="#cfe0dc"/>
+      <text x="81" y="28" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="14" font-weight="800">202 Accepted</text>
+    </g>
+    <g transform="translate(32 142)">
+      <rect width="162" height="44" rx="10" fill="#ffffff" stroke="#cfe0dc"/>
+      <text x="81" y="28" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="14" font-weight="800">@Async Video Job</text>
+    </g>
+    <g transform="translate(32 202)">
+      <rect width="162" height="44" rx="10" fill="#ffffff" stroke="#cfe0dc"/>
+      <text x="81" y="28" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="14" font-weight="800">Status API</text>
+    </g>
+  </g>
+
+  <path d="M584 134 H674" stroke="#177c73" stroke-width="7" fill="none" marker-end="url(#arrow)"/>
+  <path d="M674 206 H584" stroke="#b86b22" stroke-width="5" stroke-dasharray="8 8" fill="none" marker-end="url(#arrow)"/>
+
+  <g transform="translate(700 58)">
+    <rect width="190" height="112" rx="18" fill="#fff8ec" stroke="#edc783" filter="url(#shadow)"/>
+    <text x="95" y="45" text-anchor="middle" fill="#b86b22" font-family="Arial, sans-serif" font-size="21" font-weight="800">AI Server</text>
+    <text x="95" y="76" text-anchor="middle" fill="#6b7774" font-family="Arial, sans-serif" font-size="14">video analysis</text>
+  </g>
+  <g transform="translate(700 202)">
+    <rect width="190" height="86" rx="18" fill="#ffffff" stroke="#cfe0dc" filter="url(#shadow)"/>
+    <text x="95" y="36" text-anchor="middle" fill="#16302c" font-family="Arial, sans-serif" font-size="19" font-weight="800">AnalysisJob</text>
+    <text x="95" y="62" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="14">DONE / FAILED</text>
+  </g>
+
+  <g transform="translate(66 322)">
+    <rect width="250" height="62" rx="14" fill="#ffffff" stroke="#cfe0dc"/>
+    <text x="125" y="26" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="13">accepted response</text>
+    <text x="125" y="48" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="21" font-weight="800">30,654ms -> 102ms</text>
+  </g>
+  <g transform="translate(354 322)">
+    <rect width="250" height="62" rx="14" fill="#ffffff" stroke="#cfe0dc"/>
+    <text x="125" y="26" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="13">completed requests</text>
+    <text x="125" y="48" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="21" font-weight="800">80 -> 580</text>
+  </g>
+  <g transform="translate(642 322)">
+    <rect width="250" height="62" rx="14" fill="#ffffff" stroke="#cfe0dc"/>
+    <text x="125" y="26" text-anchor="middle" fill="#53635f" font-family="Arial, sans-serif" font-size="13">total completion</text>
+    <text x="125" y="48" text-anchor="middle" fill="#0d4f49" font-family="Arial, sans-serif" font-size="21" font-weight="800">40,737ms -> 25,347ms</text>
+  </g>
+</svg>
