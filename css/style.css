@@ -1427,6 +1427,10 @@ a:hover {
     align-content: stretch;
 }
 
+.is-hidden-slide {
+    display: none !important;
+}
+
 .project-slide-grid {
     width: 100%;
     height: 100%;
@@ -2224,19 +2228,43 @@ a:hover {
 }
 
 .trouble-visual {
+    display: grid;
+    place-items: center;
     margin: 0;
     overflow: hidden;
     border-radius: 4px;
     background: transparent;
-    min-height: 390px;
+    min-height: 0;
+    height: 390px;
 }
 
 .trouble-visual img {
     display: block;
     width: 100%;
-    height: 100%;
-    max-height: none;
+    height: auto;
+    max-height: 100%;
     object-fit: contain;
+}
+
+.trouble-visual.trouble-visual-portrait img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.trouble-visual-portrait {
+    height: 520px;
+    background-image: url("../assets/images/DADAP/trouble-async-analysis.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+}
+
+.trouble-visual.trouble-visual-portrait > img {
+    display: none;
 }
 
 .compact-story {
@@ -2248,7 +2276,7 @@ a:hover {
     grid-template-areas:
         "main visual"
         "grid visual";
-    align-items: stretch;
+    align-items: start;
     gap: 24px;
 }
 
@@ -2533,6 +2561,49 @@ a:hover {
     font-weight: 700;
 }
 
+#skills .skill-meter-list em {
+    font-size: 0.9em;
+    line-height: 1.42;
+}
+
+#skills .skill-legend p {
+    font-size: 0.82rem;
+    line-height: 1.48;
+}
+
+.project-card .compact-story .problem-story-main p,
+.project-card .compact-story .problem-story-grid p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.project-card .reflection-essay p,
+.project-card .reflection-note p,
+.project-card .reflection-lead p,
+.project-card .reflection-points p {
+    font-size: 0.96rem;
+    line-height: 1.62;
+}
+
+.reflection-compact .project-readme-section {
+    gap: 10px;
+    padding-top: 12px;
+}
+
+.reflection-compact .reflection-essay {
+    gap: 12px;
+}
+
+.reflection-compact .reflection-essay div {
+    gap: 5px;
+    padding-bottom: 11px;
+}
+
+.reflection-compact .reflection-essay p {
+    font-size: 0.9rem;
+    line-height: 1.48;
+}
+
 .minor-projects {
     display: grid;
     align-content: start;
@@ -2569,7 +2640,7 @@ a:hover {
 
 .minor-project-list li {
     display: grid;
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns: 145px minmax(0, 1fr);
     gap: 18px;
     min-width: 0;
     padding: 0 0 0 16px;
@@ -2583,6 +2654,7 @@ a:hover {
     color: var(--warm);
     font-size: clamp(0.78rem, 0.86vw, 0.92rem);
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .minor-project-list .mp-body {
@@ -2809,6 +2881,102 @@ a:hover {
     .readme-shot figcaption {
         padding: 8px;
     }
+}
+
+/* Typography role normalization */
+body,
+button,
+input,
+textarea,
+select {
+    font-family: "Noto Sans KR", Arial, sans-serif;
+}
+
+.intro-title,
+.section-heading h2,
+.project-readme-head h3,
+.project-overview-title h3,
+.minor-projects h3 {
+    font-size: clamp(1.45rem, 1.85vw, 2rem);
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.section-heading p,
+.project-readme-head p,
+.project-overview-title p,
+.project-overview-copy > p,
+.minor-projects > p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.project-readme-section h4,
+.project-readme-copy h4,
+.skill-category h3,
+.timeline-item h3 {
+    font-size: 1.05rem;
+    line-height: 1.28;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.problem-story-main h5,
+.reflection-lead h4 {
+    font-size: 1.04rem;
+    line-height: 1.34;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.project-card .project-readme-section p,
+.project-card .project-readme-copy p,
+.project-card .project-info-table dd,
+.project-card .project-role-list li,
+.project-card .stack-groups span,
+.project-card .minor-project-list p,
+.project-card .problem-story-main p,
+.project-card .problem-story-grid p,
+.project-card .reflection-essay p,
+.project-card .reflection-note p,
+.project-card .reflection-lead p,
+.project-card .reflection-points p {
+    font-size: 0.9rem;
+    line-height: 1.52;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+#skills .skill-meter-list li,
+#skills .skill-meter-list em,
+#skills .skill-legend p {
+    font-size: 0.9rem;
+    line-height: 1.42;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.project-card .project-info-table dt,
+.project-card .stack-groups strong,
+.problem-story-main span,
+.problem-story-grid span,
+.reflection-essay span,
+.reflection-lead span,
+.reflection-points span,
+.project-badges span,
+.project-badge {
+    font-size: 0.76rem;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.reflection-compact .reflection-essay p {
+    font-size: 0.86rem;
+    line-height: 1.44;
 }
 
 @media (max-width: 760px) {

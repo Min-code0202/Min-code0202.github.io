@@ -154,7 +154,7 @@
                 <article class="skill-category">
                     <h3>Backend</h3>
                     <ul class="skill-meter-list">
-                        <li><span><strong>Spring Boot</strong><em>인증·인가, 데이터 처리, 실시간 통신을 포함한 백엔드 서비스를 설계·구현했습니다.</em></span><span class="skill-meter" aria-label="4 out of 5"><i></i><i></i><i></i><i></i><i class="empty"></i></span></li>
+                        <li><span><strong>Spring Boot</strong><em>인증·인가, 데이터 처리, 실시간 통신 기반 백엔드 서비스를 개발했습니다.</em></span><span class="skill-meter" aria-label="4 out of 5"><i></i><i></i><i></i><i></i><i class="empty"></i></span></li>
                         <li><span><strong>WebSocket / STOMP</strong><em>WebSocket/STOMP와 Redis Pub/Sub을 활용해 실시간 통신 기능을 구현했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
                     </ul>
                 </article>
@@ -172,7 +172,7 @@
                     <ul class="skill-meter-list">
                         <li><span><strong>Docker / Compose</strong><em>애플리케이션과 데이터베이스 실행 환경을 컨테이너 기반으로 구성했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
                         <li><span><strong>Nginx</strong><em>리버스 프록시를 적용해 정적 리소스와 API 요청을 분리했습니다.</em></span><span class="skill-meter" aria-label="2 out of 5"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span></li>
-                        <li><span><strong>AWS EC2 / S3</strong><em>EC2 배포와 S3 연동을 통해 서비스를 운영·관리했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
+                        <li><span><strong>AWS EC2 / S3</strong><em>EC2 배포와 S3 연동으로 서비스 운영을 경험했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
                     </ul>
                 </article>
 
@@ -180,7 +180,7 @@
                     <h3>AI / External API</h3>
                     <ul class="skill-meter-list">
                         <li><span><strong>AI Integration</strong><em>프롬프트 설계, RAG 구성 및 AI 모델 학습을 수행했습니다.</em></span><span class="skill-meter" aria-label="3 out of 5"><i></i><i></i><i></i><i class="empty"></i><i class="empty"></i></span></li>
-                        <li><span><strong>WebClient</strong><em>외부 API 및 AI 서버 연동을 위한 요청·응답 처리 로직을 구현했습니다.</em></span><span class="skill-meter" aria-label="2 out of 5"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span></li>
+                        <li><span><strong>WebClient</strong><em>외부 API와 AI 서버 연동 로직을 구현했습니다.</em></span><span class="skill-meter" aria-label="2 out of 5"><i></i><i></i><i class="empty"></i><i class="empty"></i><i class="empty"></i></span></li>
                     </ul>
                 </article>
 
@@ -307,7 +307,7 @@
                     <div class="project-readme-head"><div><h3>우주오락실 · 메시지 동기화</h3><p>멀티 인스턴스 배포 후 같은 방 유저의 실시간 메시지가 서버별로 분리되는 문제를 해결했습니다.</p></div></div>
                     <section class="project-readme-section">
                         <div class="problem-story compact-story">
-                            <figure class="trouble-visual"><img src="assets/images/SpaceArcade/trouble-message-sync.svg" alt="Redis Pub/Sub 기반 서버 간 메시지 동기화 구조"></figure>
+                            <figure class="trouble-visual"><img src="assets/images/SpaceArcade/trouble-message-sync.png" alt="Redis Pub/Sub 기반 서버 간 메시지 동기화 구조"></figure>
                             <div class="problem-story-main"><span>문제 상황</span><h5>같은 방인데 EC2/C5a 중 어느 서버에 연결됐는지에 따라 게임 상태가 갈라짐</h5><p>로드밸런싱 환경에서 A 사용자는 Backend A, B 사용자는 Backend B에 연결될 수 있었습니다. 이때 STOMP SimpleBroker가 인메모리로 동작해 한 서버에서 발행한 방 메시지가 다른 서버의 구독자에게 전달되지 않았습니다.</p></div>
                             <div class="problem-story-grid"><div><span>고민한 대안</span><p>처음에는 roomId consistent hash로 같은 방 사용자를 같은 BE에 고정했고, 이후 RabbitMQ STOMP relay도 검토했습니다. 하지만 hash 라우팅은 서버 장애/재접속에 약했고, RabbitMQ는 <code>/topic/room/{uuid}</code> destination을 거부해 운영 로그에 에러가 반복됐습니다.</p></div><div><span>판단과 해결</span><p>이미 Redis가 방 상태와 점수 저장소로 쓰이고 있었기 때문에 별도 브로커보다 Redis Pub/Sub이 더 단순했습니다. <code>PatternTopic("/topic/room/*")</code>로 방 브로드캐스트를 구독하고, <code>/internal/private</code> envelope로 개인 메시지를 모든 BE에 fan-out했습니다.</p></div><div><span>성과</span><p><code>RoomPublisher</code>가 broadcast/private 전송을 Redis 기반으로 통합하면서 서버 위치와 무관하게 대기실, 게임 진행, 라이브 랭킹, 최종 결과 메시지가 동일하게 전달되도록 개선했습니다. 이후 실시간 기능은 공통 메시지 전파 기준을 먼저 설계해야 한다고 판단했습니다.</p></div></div>
                         </div>
@@ -320,7 +320,7 @@
                     <div class="project-readme-head"><div><h3>우주오락실 · 접속 상태 불일치</h3><p>100명 동접 상황에서 STOMP 채널 backlog와 비정상 이탈 처리로 방 인원이 어긋나는 문제를 해결했습니다.</p></div></div>
                     <section class="project-readme-section">
                         <div class="problem-story compact-story">
-                            <figure class="trouble-visual"><img src="assets/images/SpaceArcade/trouble-backpressure.svg" alt="STOMP 채널 백프레셔와 transport layer 보완 구조"></figure>
+                            <figure class="trouble-visual"><img src="assets/images/SpaceArcade/trouble-backpressure.png" alt="STOMP 채널 백프레셔와 transport layer 보완 구조"></figure>
                             <div class="problem-story-main"><span>문제 상황</span><h5>100명 동접에서 DISCONNECT 처리가 밀리며 사용자가 방에 남아있는 것처럼 보임</h5><p>브라우저 창 닫기·뒤로가기처럼 명시적 <code>ROOM_LEAVE</code>가 전송되지 않는 이탈에 더해, 1.5초 주기 랭킹 broadcast가 겹치면서 STOMP 채널 큐에 backlog가 쌓였습니다.</p></div>
                             <div class="problem-story-grid"><div><span>원인 확인</span><p>2vCPU 서버에서 STOMP 채널 기본 스레드 풀은 CPU x 2 기준 4개였습니다. 동접 메시지와 이탈 이벤트가 같은 채널에서 처리되면서 <code>DISCONNECT</code> 반영이 분 단위로 지연됐고 ghost session처럼 보였습니다.</p></div><div><span>판단과 해결</span><p>채널 스레드 풀을 core 16 / max 64 / queue 20,000으로 확장하고, FE cleanup과 <code>SessionDisconnectEvent</code>를 함께 사용했습니다. 재연결 오판을 줄이기 위해 10초 grace period와 heartbeat 10초도 적용했습니다.</p></div><div><span>성과</span><p>정상 이탈, 새로고침, 멀티탭, 비정상 종료를 구분하고 transport layer connect/close로 실제 연결 수를 분리했습니다. 방 인원 표시와 실제 WebSocket 연결 상태를 안정적으로 맞췄습니다.</p></div></div>
                         </div>
@@ -328,7 +328,7 @@
                 </div>
             </article>
 
-            <article class="project-card project-slide">
+            <article class="project-card project-slide is-hidden-slide">
                 <div class="project-readme project-slide-grid">
                     <div class="project-readme-head"><div><h3>우주오락실 · CNN 브라우저 이식</h3><p>직접 학습한 Quick Draw 이미지 분류 모델을 실제 게임 로딩 흐름 안에서 사용할 수 있도록 개선했습니다.</p></div></div>
                     <section class="project-readme-section">
@@ -341,7 +341,7 @@
                 </div>
             </article>
 
-            <article class="project-card project-slide">
+            <article class="project-card project-slide reflection-compact">
                 <div class="project-readme project-slide-grid">
                     <div class="project-readme-head"><div><h3>우주오락실 · 고찰 1</h3><p>Redis Pub/Sub 기반 메시지 동기화 구조를 선택하며 정리한 설계 판단입니다.</p></div></div>
                     <section class="project-readme-section">
@@ -433,7 +433,46 @@
                 </div>
             </article>
 
-            <article class="project-card project-slide"><div class="project-readme project-slide-grid"><div class="project-readme-head"><div><h3>DADAP · 문제 해결</h3><p>외부 AI 분석 지연이 WAS 요청 처리량에 미치는 문제를 줄였습니다.</p></div></div><section class="project-readme-section"><h4>비디오(비언어 지표) 분석 요청 병목</h4><div class="problem-story compact-story"><figure class="trouble-visual"><img src="assets/images/DADAP/trouble-async-analysis.svg" alt="DADAP 비동기 AI 분석 처리 흐름"></figure><div class="problem-story-main"><span>문제</span><h5>AI 서버 지연 2초가 사용자 체감 30초 응답으로 증폭</h5><p>AI 서버의 실제 지연은 약 2초였지만, 응답을 기다리는 동안 WAS 워커 스레드가 계속 점유됐습니다. 후속 요청이 큐에서 대기하며 Thread Starvation이 발생했고, 사용자 체감 대기는 약 30초까지 누적됐습니다.</p></div><div class="problem-story-grid"><div><span>해결</span><p>분석 요청은 <code>202 Accepted</code>로 먼저 접수하고, 비디오 분석 호출만 <code>@Async</code> 작업으로 분리했습니다. 기존 MVC/JPA 구조를 유지하면서 무거운 외부 AI 호출만 오프로딩했습니다.</p></div><div><span>상태 관리</span><p>백그라운드 처리만으로는 완료/실패 여부를 알기 어려워 <code>QUEUED</code>, <code>RUNNING</code>, <code>DONE</code>, <code>FAILED</code> 상태와 결과 조회 API를 분리했습니다.</p></div><div><span>검증과 성과</span><p>Mock AI 서버와 k6 20VU 동일 조건에서 비교했습니다. 요청 접수 응답은 <strong>30,654ms → 102ms</strong>, 처리 완료 요청 수는 <strong>80건 → 580건</strong>, 전체 완료 시간은 <strong>40,737ms → 25,347ms</strong>로 개선됐습니다.</p></div><div><span>설계 판단</span><p>오디오는 꼬리질문 생성에 즉시 필요해 동기로 유지했습니다. 비디오는 결과가 후속 질문 흐름을 막지 않아 비동기로 분리했고, 제한된 스레드 풀이 AI 서버 동시 호출 수를 제어하는 보호막 역할을 하도록 했습니다.</p></div></div></div></section></div></article>
+            <article class="project-card project-slide">
+                <div class="project-readme project-slide-grid">
+                    <div class="project-readme-head">
+                        <div>
+                            <h3>DADAP · 분석 요청 병목</h3>
+                            <p>비디오 분석 요청을 비동기 작업으로 분리해 WAS 요청 스레드 점유를 줄였습니다.</p>
+                        </div>
+                    </div>
+                    <section class="project-readme-section">
+                        <div class="problem-story compact-story">
+                            <figure class="trouble-visual trouble-visual-portrait" role="img" aria-label="DADAP 비동기 AI 분석 처리 흐름">
+                                <img src="assets/images/DADAP/trouble-async-analysis.png" alt="">
+                            </figure>
+                            <div class="problem-story-main">
+                                <span>문제 상황</span>
+                                <h5>AI 서버 지연보다 WAS 요청 스레드 점유가 병목</h5>
+                                <p>AI 서버 지연은 약 2초였지만, 응답을 기다리는 동안 Spring 요청 스레드가 점유됐습니다. 동시 요청이 늘어나며 후속 요청이 큐에 쌓였고, 체감 대기는 약 30초까지 증가했습니다.</p>
+                            </div>
+                            <div class="problem-story-grid">
+                                <div>
+                                    <span>해결</span>
+                                    <p><code>202 Accepted</code>로 요청을 먼저 접수하고, 비디오 분석은 <code>@Async</code> 작업으로 분리했습니다. 기존 MVC/JPA 구조를 유지하며 무거운 AI 호출만 오프로딩했습니다.</p>
+                                </div>
+                                <div>
+                                    <span>상태 관리</span>
+                                    <p><code>AnalysisJob</code>에 <code>QUEUED</code>, <code>RUNNING</code>, <code>DONE</code>, <code>FAILED</code> 상태와 결과를 저장하고, 별도 조회 API로 완료 여부를 확인하도록 분리했습니다.</p>
+                                </div>
+                                <div>
+                                    <span>검증과 성과</span>
+                                    <p>Mock AI 서버와 k6 20VU로 비교했습니다. 요청 접수 응답은 <code>30,654ms → 102ms</code>, 처리 완료 요청 수는 <code>80건 → 580건</code>, 전체 완료 시간은 <code>40,737ms → 25,347ms</code>로 개선됐습니다.</p>
+                                </div>
+                                <div>
+                                    <span>설계 판단</span>
+                                    <p>오디오는 꼬리질문 생성에 즉시 필요해 동기로 유지했습니다. 비디오는 사후 피드백 성격이라 비동기로 분리하고, 제한된 스레드 풀이 AI 호출 수를 제어하도록 했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
 
             <article class="project-card project-slide project-overview-slide" id="p-zipcheck">
                 <div class="project-overview-detail">
