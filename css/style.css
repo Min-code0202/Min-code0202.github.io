@@ -2382,6 +2382,54 @@ a:hover {
     gap: 10px;
 }
 
+@media screen and (min-width: 761px) {
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) {
+        height: auto;
+        min-height: var(--slide-height);
+        overflow: visible;
+        padding: clamp(24px, 3.2vw, 40px) clamp(44px, 5vw, 64px);
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .project-readme {
+        gap: 10px;
+        font-size: clamp(0.72rem, 0.8vw, 0.88rem);
+        line-height: 1.4;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .project-readme-head {
+        padding-bottom: 5px;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .project-readme-head h3 {
+        font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .project-readme-head p {
+        font-size: clamp(0.76rem, 0.86vw, 0.92rem);
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .project-readme-section h4 {
+        font-size: 0.98rem;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .problem-story-main h5 {
+        font-size: 0.96rem;
+        line-height: 1.28;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .problem-story-main p,
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .problem-story-grid p {
+        font-size: 0.78rem;
+        line-height: 1.42;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .problem-story code {
+        padding: 1px 4px;
+        font-size: 0.78rem;
+        line-height: 1.28;
+    }
+}
+
 .zipcheck-story {
     gap: 10px;
 }
@@ -2428,6 +2476,41 @@ a:hover {
     margin-top: 4px;
     white-space: normal;
     overflow-wrap: anywhere;
+}
+
+@media screen and (min-width: 761px) {
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-result-grid {
+        gap: 10px;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-result-grid .metric-card {
+        padding: 10px 12px;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-result-grid .metric-card strong {
+        font-size: clamp(1rem, 1.18vw, 1.28rem);
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-result-grid .metric-card p {
+        font-size: 0.74rem;
+        line-height: 1.32;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-step-grid {
+        gap: 12px;
+        padding-top: 8px;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-step-grid div {
+        padding-bottom: 0;
+    }
+
+    .zipcheck-troubleshooting:not(.zipcheck-reflection) .zipcheck-step-grid div > code {
+        margin-top: 3px;
+        padding: 3px 5px;
+        font-size: 0.74rem;
+        line-height: 1.28;
+    }
 }
 
 .zipcheck-decision-list {
